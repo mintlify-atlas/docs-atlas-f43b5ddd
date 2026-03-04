@@ -1,0 +1,267 @@
+---
+title: 'International Language Support'
+description: 'Using BioRAM in multiple languages including Spanish, French, Indonesian, Russian, and Arabic'
+icon: 'globe'
+---
+
+## Overview
+
+BioRAM provides multilingual support to make biosafety and biosecurity risk assessment accessible to laboratories worldwide. International versions help ensure that risk assessment concepts and tools are available in the native languages of users globally.
+
+<Info>
+Language support is implemented through translated `.raml` files used by the Java-based BioRAM application. These files contain the user interface text, question sets, and guidance in the target language.
+</Info>
+
+## Available Languages
+
+BioRAM currently supports the following languages:
+
+<CardGroup cols={2}>
+  <Card title="English" icon="flag-usa">
+    **Default Language**
+    
+    Primary development language with the most complete feature coverage across all BioRAM versions.
+  </Card>
+  
+  <Card title="Spanish (Español)" icon="flag">
+    **Language Code**: `es`
+    
+    Fully translated biosafety and biosecurity modules for Spanish-speaking countries.
+  </Card>
+  
+  <Card title="French (Français)" icon="flag">
+    **Language Code**: `fr`
+    
+    Complete French translations for francophone laboratories and institutions.
+  </Card>
+  
+  <Card title="Indonesian (Bahasa Indonesia)" icon="flag">
+    **Language Code**: `id`
+    
+    Indonesian language support for Southeast Asian users.
+  </Card>
+  
+  <Card title="Russian (Русский)" icon="flag">
+    **Language Code**: `ru`
+    
+    Russian translations for users in Russian-speaking regions.
+  </Card>
+  
+  <Card title="Arabic (العربية)" icon="flag">
+    **Language Code**: `ar` / `AR`
+    
+    Right-to-left language support for Arabic-speaking countries and regions.
+  </Card>
+</CardGroup>
+
+## Available Translation Files
+
+The BioRAM repository includes the following internationalization files:
+
+### Biosafety Module Translations
+
+- `Biosafety.raml` - English (default)
+- `BiosafetyRAM_es.raml` - Spanish
+- `BiosafetyRAM_fr.raml` - French
+- `BiosafetyRAM_v2_id.raml` - Indonesian (version 2)
+- `BiosafetyRAM_v2_ru.raml` - Russian (version 2)
+- `Biosafety_AR.raml` - Arabic
+
+### Biosecurity Module Translations
+
+- `Biosecurity.raml` - English (default)
+- `BiosecurityRAM_es.raml` - Spanish
+- `BiosecurityRAM_fr.raml` - French
+- `BiosecurityRAM_v2_id.raml` - Indonesian (version 2)
+- `BiosecurityRAM_v2_ru.raml` - Russian (version 2)
+- `Biosecurity_AR.raml` - Arabic
+
+<Note>
+Some language versions are marked as "v2" indicating they are based on updated assessment frameworks. Always use the most recent version available for your language.
+</Note>
+
+## Which Versions Support Multiple Languages
+
+Language support varies by BioRAM implementation:
+
+### Java Application (Full Multilingual Support)
+
+The Java-based BioRAM application supports all available languages through `.raml` resource files:
+
+- **Installation**: Download and install the Java application
+- **Language Selection**: Choose your preferred language during setup or in application settings
+- **File Loading**: The application loads the appropriate `.raml` file based on language selection
+- **Dynamic Switching**: Some versions allow changing language without restarting
+
+<Card title="Java Application Features" icon="coffee">
+  - Full UI translation
+  - Translated assessment questions and guidance
+  - Localized help documentation
+  - Native language reporting (where supported)
+</Card>
+
+### Excel Versions (English Only)
+
+The Excel-based BioRAM tools are primarily available in English:
+
+- `BioRAM-2022 (BioRisk).xlsx` - English
+- `BioRAM-Safety-2016.xlsx` - English
+- `BioRAM-Security-2016.xlsx` - English
+- `BioRAM-Security-2017.xlsx` - English
+- `BioRAM-Security-2020.xlsx` - English
+
+<Warning>
+Currently, no officially translated Excel versions are available in the repository. Users requiring assessments in other languages should use the Java application with the appropriate `.raml` language file.
+</Warning>
+
+## How to Use Translated Versions
+
+### Setting Up Language Support in Java Application
+
+<Steps>
+  <Step title="Install BioRAM Java Application">
+    Download and install the Java-based BioRAM application from the official source or repository.
+  </Step>
+  
+  <Step title="Locate Language Files">
+    Ensure the appropriate `.raml` files are available in the application's resources directory. The files should be in the same folder as the main application.
+  </Step>
+  
+  <Step title="Select Your Language">
+    During initial setup or in the application preferences:
+    - Navigate to Settings or Preferences
+    - Select Language/Idioma/Langue/Bahasa/Язык/اللغة
+    - Choose your preferred language from the dropdown
+  </Step>
+  
+  <Step title="Restart if Required">
+    Some versions may require restarting the application to load the new language file.
+  </Step>
+  
+  <Step title="Verify Translation">
+    Check that the interface, questions, and guidance appear in your selected language.
+  </Step>
+</Steps>
+
+### Manual Language File Loading
+
+For advanced users or custom deployments:
+
+```bash
+# Example: Copying Spanish language file to application directory
+cp BiosafetyRAM_es.raml /path/to/bioram/resources/
+cp BiosecurityRAM_es.raml /path/to/bioram/resources/
+
+# Launch application with specific language (if supported)
+java -Duser.language=es -jar BioRAM.jar
+```
+
+## Language-Specific RAML Files
+
+The `.raml` files contain structured data for the BioRAM application:
+
+### File Structure
+
+Each `.raml` file includes:
+
+- **UI Elements**: Buttons, menus, dialog boxes
+- **Assessment Questions**: Risk assessment questionnaire items
+- **Scoring Criteria**: Descriptions of risk levels and scores
+- **Guidance Text**: Help documentation and explanatory content
+- **Terminology**: Biosafety/biosecurity technical terms
+
+### Translation Quality
+
+All translations are developed in collaboration with:
+- Native speakers with biosafety expertise
+- International biosafety professionals
+- Regional laboratory safety organizations
+- Subject matter experts in each language region
+
+<Info>
+Translations aim to maintain technical accuracy while being culturally appropriate and easily understood by target users.
+</Info>
+
+## Translation Coverage by Module
+
+| Module | en | es | fr | id | ru | ar |
+|--------|----|----|----|----|----|----||
+| Biosafety | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Biosecurity | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| ChemSAM | ✓ | - | - | - | - | - |
+
+<Note>
+Chemical safety assessment (ChemSAM) is currently available only in English.
+</Note>
+
+## Regional Considerations
+
+### Right-to-Left Language Support (Arabic)
+
+The Arabic version (`Biosafety_AR.raml`, `Biosecurity_AR.raml`) includes:
+
+- Right-to-left text rendering
+- Mirrored UI layout where appropriate
+- Arabic-specific typography and spacing
+- Cultural adaptation of examples and scenarios
+
+### Version Differences
+
+Some languages show version indicators (`v2`):
+
+- **v2 files**: Based on updated assessment framework with refined questions
+- **Non-versioned files**: May be based on earlier assessment versions
+- Always use the highest version number available for your language
+
+## Contributing Translations
+
+Interested in contributing or improving translations?
+
+<Card title="Translation Guidelines" icon="language">
+  - Maintain technical accuracy of biosafety/biosecurity terms
+  - Follow RAML file format specifications
+  - Test translations in the Java application
+  - Consult with biosafety professionals in the target language
+  - Submit contributions through official BioRAM channels
+</Card>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Can I use BioRAM in my language if a translation isn't available?">
+    Yes, you can use the English version, or consider contributing a translation for your language. The Java application's architecture supports adding new languages through additional `.raml` files.
+  </Accordion>
+  
+  <Accordion title="Are the translated versions validated for technical accuracy?">
+    Yes, all official translations undergo review by biosafety experts who are native speakers of the target language to ensure technical terminology is correct and culturally appropriate.
+  </Accordion>
+  
+  <Accordion title="Will translated Excel versions be available?">
+    While no translated Excel versions are currently in the repository, users can use the multilingual Java application for assessments in their preferred language.
+  </Accordion>
+  
+  <Accordion title="How do I report translation errors or suggestions?">
+    Contact the BioRAM development team or submit issues through the official repository with specific details about translation improvements needed.
+  </Accordion>
+  
+  <Accordion title="Can I create a custom translation for internal use?">
+    Yes, you can create custom `.raml` files based on the existing structure. Ensure you maintain the correct RAML format and test thoroughly before deployment.
+  </Accordion>
+</AccordionGroup>
+
+## Additional Resources
+
+- [Java Version Documentation](/guides/java-version) - Using the Java application
+- [Getting Started Guide](/quickstart) - Basic BioRAM usage
+- [Installation Instructions](/installation) - Setting up BioRAM
+- [User Guides](/guides/excel-version) - Complete BioRAM documentation
+
+## Language Support Roadmap
+
+Future language support may include:
+- Additional languages based on user demand
+- Updated translations for newer BioRAM versions
+- Expanded localization including reports and exports
+- Community-contributed translations
+
+Check the repository regularly for newly added language files and translation updates.

@@ -1,0 +1,728 @@
+---
+title: ChemSAM Guide
+description: Complete guide to the Chemical Security Assessment Methodology tool
+---
+
+ChemSAM (Chemical Security Assessment Methodology) is a specialized tool for evaluating security risks associated with chemical materials in laboratory and industrial settings.
+
+## What is ChemSAM?
+
+ChemSAM provides a structured framework for assessing the security risks of chemical materials, focusing on:
+
+- **Theft and diversion** of hazardous chemicals
+- **Misuse potential** for harmful purposes
+- **Dual-use concerns** where chemicals have both legitimate and nefarious applications
+- **Consequence of loss** to public health and safety
+- **Adequacy of security controls** to prevent unauthorized access
+
+<Note>
+ChemSAM complements BioRAM by addressing chemical security, while BioRAM focuses on biological agents. Some facilities may need both tools.
+</Note>
+
+### ChemSAM vs. BioRAM
+
+Understanding which tool to use:
+
+| Tool | Focus | Materials Assessed | Primary Risks |
+|------|-------|-------------------|---------------|
+| **BioRAM** | Biosafety & Biosecurity | Biological agents (bacteria, viruses, toxins) | Infection, exposure, theft/misuse of pathogens |
+| **ChemSAM** | Chemical Security | Hazardous chemicals | Theft, diversion, weaponization of chemicals |
+
+<Warning>
+Some facilities work with both biological agents and hazardous chemicals. Conduct separate assessments using both BioRAM and ChemSAM for comprehensive risk management.
+</Warning>
+
+## When to Use ChemSAM
+
+Consider using ChemSAM if your facility:
+
+<Tabs>
+  <Tab title="Chemical Laboratories">
+    **Academic and Research Labs**
+    
+    Use ChemSAM when working with:
+    - Toxic industrial chemicals (TICs)
+    - Explosive precursors
+    - Chemical warfare agent precursors
+    - Controlled substances
+    - Large quantities of hazardous materials
+    
+    **Examples:**
+    - Organic chemistry research labs
+    - Analytical chemistry facilities
+    - Environmental testing laboratories
+    - Pharmaceutical research facilities
+  </Tab>
+  
+  <Tab title="Industrial Facilities">
+    **Manufacturing and Production**
+    
+    Use ChemSAM for:
+    - Chemical manufacturing plants
+    - Pharmaceutical production facilities
+    - Pesticide/herbicide manufacturers
+    - Specialty chemical producers
+    - Facilities storing bulk chemicals
+    
+    **Key Concerns:**
+    - Large-scale storage of hazardous chemicals
+    - Insider threat potential
+    - Supply chain security
+    - Community proximity and consequence
+  </Tab>
+  
+  <Tab title="Educational Institutions">
+    **Schools and Universities**
+    
+    Use ChemSAM when managing:
+    - Teaching laboratory chemical inventories
+    - Stockrooms with diverse chemical collections
+    - Demonstration materials
+    - Research-grade chemicals
+    
+    **Unique Challenges:**
+    - High personnel turnover (students)
+    - Public access to campus
+    - Diverse user population
+    - Legacy chemicals from past research
+  </Tab>
+  
+  <Tab title="Clinical/Hospital Settings">
+    **Healthcare Facilities**
+    
+    Use ChemSAM for:
+    - Hospital pharmacies (controlled substances)
+    - Clinical laboratories (reagents)
+    - Pathology departments
+    - Research wings
+    
+    **Special Considerations:**
+    - Controlled substance regulations
+    - DEA compliance
+    - Patient safety overlap
+    - 24/7 operations and access
+  </Tab>
+</Tabs>
+
+## ChemSAM Files and Structure
+
+ChemSAM is provided as part of the BioRAM package and uses the same Java application framework.
+
+### Available Files
+
+- **ChemSAM.raml**: Primary chemical security assessment model
+- **ChemSAM_chemicals_rsp.raml**: Extended model with specific chemical response protocols
+
+### File Characteristics
+
+Like BioRAM .raml files, ChemSAM files are:
+- ZIP archives containing XML data structures
+- Define assessment questions and scoring algorithms
+- Loaded into the BioRAM Java application
+- Portable and shareable across facilities
+
+<Note>
+ChemSAM uses the same BioRAM 4.0 Java application (bioram-4.0.5.jar). You don't need separate software - just load the ChemSAM.raml file instead of Biosafety.raml or Biosecurity.raml.
+</Note>
+
+## Getting Started with ChemSAM
+
+<Steps>
+  <Step title="Launch the BioRAM application">
+    Start the BioRAM Java application:
+    
+    **Windows:**
+    ```bash
+    bioram-4.0.5.exe
+    ```
+    
+    **Mac/Linux:**
+    ```bash
+    java -jar bioram-4.0.5.jar
+    ```
+    
+    <Note>
+    Requires Java Runtime Environment (JRE) 7 or later. See the Java Version Guide for installation details.
+    </Note>
+  </Step>
+  
+  <Step title="Load the ChemSAM.raml file">
+    When prompted to select an assessment model:
+    - Navigate to your BioRAM installation directory
+    - Select **ChemSAM.raml** (or **ChemSAM_chemicals_rsp.raml** for extended model)
+    - Click **Open**
+    
+    The interface will load with chemical security-specific questions.
+  </Step>
+  
+  <Step title="Create a new chemical security assessment">
+    From the menu bar:
+    - Click **File > New Assessment**
+    - A blank chemical security assessment form appears
+  </Step>
+  
+  <Step title="Enter facility and chemical information">
+    Begin by documenting:
+    - Facility name and location
+    - Assessment date and assessor names
+    - Type of facility (academic, industrial, clinical)
+    - Chemical inventory overview
+  </Step>
+</Steps>
+
+## Chemical Security Risk Factors
+
+ChemSAM evaluates multiple dimensions of chemical security risk:
+
+### 1. Chemical Characteristics
+
+Inherent properties that affect security risk:
+
+#### Toxicity
+- Acute toxicity (LD50, LC50)
+- Chronic exposure effects
+- Route of exposure (inhalation, dermal, ingestion)
+- Environmental persistence
+
+#### Accessibility
+- Commercial availability
+- Difficulty of synthesis
+- Controlled substance status
+- Export control restrictions
+
+#### Dual-Use Potential
+- Precursor to chemical weapons
+- Explosive manufacturing potential
+- Narcotics synthesis capability
+- Legitimate industrial/research uses
+
+<Warning>
+Chemicals of concern include those on the Chemical Facility Anti-Terrorism Standards (CFATS) list, DEA controlled substance schedules, and Australia Group export control lists.
+</Warning>
+
+### 2. Quantity and Form
+
+Volume and physical state affect consequence:
+
+- **Quantity thresholds**: Small lab quantities vs. bulk storage
+- **Concentration**: Dilute solutions vs. pure compounds
+- **Physical form**: 
+  - Gases (immediate release potential)
+  - Volatile liquids (evaporation/aerosolization)
+  - Solids (requires dissolution or processing)
+  - Solutions (ready for use)
+
+<Note>
+Risk increases with quantity and concentration. 5 kg of a precursor chemical presents greater security risk than 5 grams.
+</Note>
+
+### 3. Consequence of Loss
+
+Potential impact if chemical is stolen or diverted:
+
+#### Public Health Impact
+- Population density near facility
+- Potential casualty count
+- Healthcare system capacity
+- Long-term health effects
+
+#### Economic Impact
+- Facility shutdown duration
+- Cleanup and remediation costs
+- Business interruption
+- Supply chain disruption
+
+#### Security Impact
+- Potential for weaponization
+- Terrorist target attractiveness
+- Strategic significance
+- Symbolic or psychological impact
+
+### 4. Attractiveness to Adversaries
+
+Factors that make chemicals appealing targets:
+
+- **Ease of weaponization**: Technical knowledge required
+- **Availability elsewhere**: Uniqueness of source
+- **Quantity available**: Sufficient for harmful use
+- **Detection difficulty**: Ability to conceal theft
+- **Alternative sources**: Commercial availability
+
+### 5. Existing Security Controls
+
+Current measures to prevent unauthorized access:
+
+#### Physical Security
+- Perimeter fencing and barriers
+- Locked storage (cabinets, cages, rooms)
+- Intrusion detection systems
+- Security cameras and monitoring
+- Alarm systems
+
+#### Access Control
+- Key/lock systems
+- Electronic access (card readers, biometrics)
+- Authorization procedures
+- Visitor management
+- After-hours access restrictions
+
+#### Inventory Management
+- Perpetual inventory systems
+- Regular reconciliation
+- Container marking and tracking
+- Procurement approval processes
+- Disposal documentation
+
+#### Personnel Security
+- Background checks
+- Security awareness training
+- Insider threat programs
+- Separation of duties
+- Termination procedures
+
+#### Information Security
+- Inventory data protection
+- Chemical location information
+- Protocol and procedure access
+- Cybersecurity measures
+
+## Assessment Workflow
+
+Follow this systematic approach to complete a ChemSAM assessment:
+
+<Steps>
+  <Step title="Identify chemicals of concern">
+    Review your chemical inventory and identify materials requiring security assessment:
+    
+    **High-priority chemicals:**
+    - CFATS chemicals of interest (COI)
+    - DEA List I and List II chemicals
+    - Australia Group controlled chemicals
+    - Explosives precursors
+    - Highly toxic materials (Schedule 1-3 chemical weapons precursors)
+    
+    **Considerations:**
+    - Regulatory requirements
+    - Quantity thresholds
+    - Historical theft/loss patterns
+    - Institutional risk tolerance
+  </Step>
+  
+  <Step title="Gather information for each chemical">
+    Collect data needed for the assessment:
+    
+    - Safety Data Sheets (SDS)
+    - Current inventory quantities
+    - Storage locations and conditions
+    - Usage patterns and frequency
+    - Access authorization lists
+    - Current security measures
+    - Regulatory classifications
+  </Step>
+  
+  <Step title="Complete the ChemSAM assessment questions">
+    Work through each section systematically:
+    
+    **Chemical Information Section:**
+    - Chemical name (IUPAC and common)
+    - CAS number
+    - Physical properties
+    - Hazard classifications
+    - Regulatory status
+    
+    **Consequence Assessment:**
+    - Toxicity and hazard levels
+    - Quantity and concentration
+    - Potential misuse scenarios
+    - Population at risk
+    - Environmental impact
+    
+    **Attractiveness Evaluation:**
+    - Dual-use potential
+    - Ease of weaponization
+    - Commercial availability
+    - Technical expertise required
+    
+    **Security Controls Review:**
+    - Physical security measures
+    - Access control systems
+    - Inventory accountability
+    - Personnel vetting
+    - Information protection
+  </Step>
+  
+  <Step title="Review calculated risk scores">
+    ChemSAM calculates:
+    
+    - **Overall security risk rating**: High, Medium, or Low
+    - **Consequence score**: Impact if chemical is lost or stolen
+    - **Likelihood score**: Probability of unauthorized access
+    - **Control adequacy**: Effectiveness of current security measures
+    - **Prioritized risk ranking**: Comparison across your chemical inventory
+  </Step>
+  
+  <Step title="Identify security gaps">
+    The assessment highlights:
+    
+    - Chemicals lacking adequate security controls
+    - High-consequence materials with insufficient protection
+    - Inventory management weaknesses
+    - Access control deficiencies
+    - Training or awareness gaps
+  </Step>
+  
+  <Step title="Develop mitigation strategies">
+    Based on findings, implement risk reduction measures:
+    
+    **Engineering controls:**
+    - Enhanced locked storage
+    - Dedicated chemical security rooms
+    - Intrusion detection systems
+    - Security cameras
+    
+    **Administrative controls:**
+    - Improved inventory systems
+    - Access authorization procedures
+    - Regular audits and reconciliation
+    - Chemical minimization programs
+    
+    **Personnel measures:**
+    - Security awareness training
+    - Background screening
+    - Insider threat awareness
+    - Clear accountability procedures
+  </Step>
+  
+  <Step title="Document and report">
+    Generate assessment reports showing:
+    
+    - Inventory of assessed chemicals
+    - Risk ratings for each material
+    - Security gap analysis
+    - Recommended improvements
+    - Implementation timeline
+    - Responsible parties
+    
+    Use **File > Export Report** in the BioRAM application.
+  </Step>
+</Steps>
+
+## ChemSAM Risk Matrix
+
+ChemSAM uses a matrix approach to categorize chemical security risk:
+
+```
+                    CONSEQUENCE
+                Low    Medium    High
+            ┌──────┬──────────┬──────┐
+       High │ Med  │   High   │ High │
+LIKELIHOOD  ├──────┼──────────┼──────┤
+     Medium │ Low  │  Medium  │ High │
+            ├──────┼──────────┼──────┤
+        Low │ Low  │   Low    │ Med  │
+            └──────┴──────────┴──────┘
+```
+
+### Risk Level Definitions
+
+**High Risk:**
+- Immediate security improvements required
+- Consider reducing quantities or eliminating chemical
+- Enhanced monitoring and access controls
+- Frequent inventory reconciliation
+- Potential regulatory notification
+
+**Medium Risk:**
+- Security enhancements recommended
+- Implement additional controls within defined timeframe
+- Regular monitoring and periodic assessments
+- Document security procedures
+
+**Low Risk:**
+- Current controls adequate
+- Maintain existing security measures
+- Include in routine security reviews
+- Monitor for changes in threat environment
+
+## Using ChemSAM Results
+
+### Prioritizing Security Investments
+
+ChemSAM helps allocate resources effectively:
+
+1. **Rank chemicals by risk score**: Focus on highest-risk materials first
+2. **Group by storage location**: Implement area-based security improvements
+3. **Identify common gaps**: Address systemic vulnerabilities
+4. **Cost-benefit analysis**: Balance security improvement costs against risk reduction
+
+### Chemical Inventory Rationalization
+
+Use assessment results to:
+
+- **Eliminate unnecessary chemicals**: Dispose of unneeded high-risk materials
+- **Reduce quantities**: Order smaller amounts more frequently
+- **Substitute when possible**: Replace high-risk chemicals with safer alternatives
+- **Consolidate storage**: Centralize high-risk chemicals in secured areas
+
+<Note>
+Chemical minimization is one of the most effective security measures - chemicals you don't have can't be stolen.
+</Note>
+
+### Regulatory Compliance
+
+ChemSAM assessments support compliance with:
+
+- **CFATS (Chemical Facility Anti-Terrorism Standards)**: For facilities with threshold quantities of chemicals of interest
+- **DEA regulations**: For controlled substances and precursors
+- **State and local requirements**: Chemical security ordinances
+- **Institutional policies**: University or corporate chemical security programs
+
+### Integration with Safety Programs
+
+Chemical security complements chemical safety:
+
+| Program Element | Safety Focus | Security Focus |
+|-----------------|--------------|----------------|
+| **Storage** | Segregation, ventilation, containment | Locked, access-controlled, monitored |
+| **Inventory** | Hazard tracking, expiration dates | Accountability, reconciliation, loss detection |
+| **Training** | Hazard recognition, PPE, emergency response | Threat awareness, reporting, access protocols |
+| **Audits** | Compliance, housekeeping, engineering controls | Inventory accuracy, access logs, security systems |
+
+## Saving and Managing ChemSAM Assessments
+
+### File Management
+
+ChemSAM assessments are saved using the BioRAM application:
+
+<Steps>
+  <Step title="Save your assessment">
+    **File > Save As**
+    
+    Use descriptive filenames:
+    ```
+    ChemSAM-[Facility]-[Date].extension
+    ```
+    
+    Example: `ChemSAM-ChemBuilding3-2026-03-04`
+  </Step>
+  
+  <Step title="Maintain version history">
+    Keep previous assessments when updating:
+    - Annual reassessments
+    - After inventory changes
+    - Following security incidents
+    - When implementing new controls
+    
+    Versioning example:
+    ```
+    ChemSAM-Lab-2025-Q1.assessment
+    ChemSAM-Lab-2025-Q2.assessment
+    ChemSAM-Lab-2026-Q1.assessment
+    ```
+  </Step>
+  
+  <Step title="Secure storage">
+    ChemSAM assessments contain sensitive security information:
+    
+    - Store in access-controlled directories
+    - Encrypt if required by policy
+    - Limit distribution to authorized personnel
+    - Include security classification markings
+    - Follow information security protocols
+  </Step>
+</Steps>
+
+<Warning>
+ChemSAM reports reveal security vulnerabilities and chemical locations. Treat as sensitive security information and distribute only on a need-to-know basis.
+</Warning>
+
+### Export and Reporting
+
+Generate reports for different audiences:
+
+<Tabs>
+  <Tab title="Executive Summary">
+    For senior leadership:
+    
+    - Overall facility risk rating
+    - Number of high/medium/low risk chemicals
+    - Top security gaps identified
+    - Recommended priority actions
+    - Budget implications
+    - Timeline for improvements
+  </Tab>
+  
+  <Tab title="Detailed Assessment">
+    For security officers and chemical hygiene officers:
+    
+    - Complete chemical inventory assessed
+    - Individual risk scores for each chemical
+    - Specific security control deficiencies
+    - Detailed mitigation recommendations
+    - Implementation procedures
+    - Responsibility assignments
+  </Tab>
+  
+  <Tab title="Regulatory Submission">
+    For compliance reporting:
+    
+    - Chemicals meeting regulatory thresholds
+    - Security measures in place
+    - Risk assessment methodology
+    - Planned improvements and timeline
+    - Compliance status documentation
+  </Tab>
+</Tabs>
+
+## ChemSAM Best Practices
+
+### Conducting Comprehensive Assessments
+
+<AccordionGroup>
+  <Accordion title="Involve key stakeholders">
+    Include representatives from:
+    - Environmental Health & Safety
+    - Security/Police department
+    - Laboratory supervisors
+    - Stockroom managers
+    - Research faculty/principal investigators
+    - Facilities management
+    - Legal/compliance office
+  </Accordion>
+  
+  <Accordion title="Maintain accurate inventories">
+    ChemSAM effectiveness depends on knowing what you have:
+    - Implement chemical inventory management system
+    - Conduct regular physical inventories
+    - Update database when receiving/disposing chemicals
+    - Reconcile discrepancies immediately
+    - Train personnel on inventory procedures
+  </Accordion>
+  
+  <Accordion title="Regular reassessment schedule">
+    Chemical security is dynamic:
+    - Annual assessments minimum
+    - After significant inventory changes
+    - When threat environment changes
+    - Following security incidents
+    - After implementing new controls
+    - When regulations change
+  </Accordion>
+  
+  <Accordion title="Link to action">
+    Don't let assessments sit on shelves:
+    - Develop action plans with timelines
+    - Assign responsibility for each item
+    - Allocate budget for improvements
+    - Track implementation progress
+    - Measure effectiveness of new controls
+    - Close the loop with follow-up assessments
+  </Accordion>
+</AccordionGroup>
+
+### Integration with Biosafety
+
+Many facilities need both ChemSAM and BioRAM:
+
+**Facilities with both biological and chemical hazards:**
+- Medical research laboratories (pathogens + hazardous reagents)
+- Biodefense facilities (select agents + chemical precursors)
+- Clinical laboratories (infectious materials + toxic chemicals)
+- Teaching labs (live organisms + chemical experiments)
+
+**Coordinated approach:**
+- Conduct both BioRAM and ChemSAM assessments
+- Identify overlapping controls (access control benefits both)
+- Streamline procedures where possible
+- Integrate training programs
+- Unified incident reporting
+- Combined security audits
+
+<Note>
+Some biological toxins (ricin, botulinum toxin, etc.) may require assessment with both BioRAM (as biological select agents) and ChemSAM (as toxic chemicals). Consult regulatory requirements.
+</Note>
+
+## Troubleshooting ChemSAM
+
+<AccordionGroup>
+  <Accordion title="ChemSAM.raml won't load">
+    **Problem**: Error when trying to load ChemSAM.raml file
+    
+    **Solutions**:
+    - Verify ChemSAM.raml is in the same directory as bioram-4.0.5.jar
+    - Check file is not corrupted (compare size with original download)
+    - Ensure file has .raml extension (not .raml.zip or .raml.txt)
+    - Try copying file to a different location and loading from there
+    - Verify Java has read permissions for the file
+  </Accordion>
+  
+  <Accordion title="Questions seem wrong for chemicals">
+    **Problem**: Assessment questions reference biological agents instead of chemicals
+    
+    **Solutions**:
+    - You likely loaded Biosafety.raml or Biosecurity.raml by mistake
+    - Close the application
+    - Restart and select ChemSAM.raml specifically
+    - Verify the filename before clicking Open
+  </Accordion>
+  
+  <Accordion title="Risk scores seem inconsistent">
+    **Problem**: Similar chemicals getting very different risk scores
+    
+    **Solutions**:
+    - Review all input parameters carefully
+    - Small differences in quantity or concentration can significantly affect risk
+    - Ensure storage location and security controls are accurately represented
+    - Check that you're comparing chemicals with similar hazard profiles
+    - Verify scoring methodology in ChemSAM documentation
+  </Accordion>
+  
+  <Accordion title="Cannot save assessment">
+    **Problem**: Save operation fails or file doesn't appear
+    
+    **Solutions**:
+    - Check write permissions on destination folder
+    - Ensure sufficient disk space
+    - Avoid special characters in filename
+    - Try saving to Desktop or Documents folder
+    - Close other applications if system is low on memory
+  </Accordion>
+</AccordionGroup>
+
+## Additional Resources
+
+### Related Documentation
+
+- **BioRAM UserGuide SAND.pdf**: While focused on biological agents, the risk assessment methodology applies to ChemSAM
+- **BioRAM 4.0 Directions.pdf**: Software usage instructions applicable to ChemSAM
+- **Java Version Guide**: Complete guide to using the BioRAM Java application that runs ChemSAM
+
+### Regulatory Resources
+
+**CFATS (Chemical Facility Anti-Terrorism Standards):**
+- CISA CFATS website: https://www.cisa.gov/cfats
+- Chemicals of Interest list and threshold quantities
+
+**DEA (Drug Enforcement Administration):**
+- List I and List II chemical regulations
+- Controlled substance security requirements
+
+**Australia Group:**
+- Export control lists for chemical weapons precursors
+- Dual-use chemical guidelines
+
+### Chemical Security Programs
+
+**Academic institutions:**
+- Laboratory chemical safety and security programs
+- Stockroom management best practices
+- Student and researcher training
+
+**Industry:**
+- Chemical sector security practices
+- Supply chain security
+- Insider threat programs
+
+<Note>
+ChemSAM is a risk assessment tool, not a substitute for regulatory compliance programs. Use it to inform and enhance your chemical security program, but ensure you meet all applicable legal requirements.
+</Note>

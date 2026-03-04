@@ -1,0 +1,278 @@
+---
+title: Version History
+description: BioRAM versions, timeline, and changes across releases
+---
+
+## Version Overview
+
+BioRAM has evolved through multiple versions since 2016, with separate Excel-based and Java-based implementations. Different assessment types have been updated at different times to reflect evolving biosafety and biosecurity standards.
+
+## Current Versions
+
+### Excel Version
+
+**BioRAM-2022 (BioRisk)** - Latest Integrated Version
+- **Status**: Beta (as of December 2023 update)
+- **Type**: Combined biosafety and biosecurity assessment
+- **Format**: Excel spreadsheet (.xlsx)
+- **File Size**: ~204 KB
+- **Last Update**: December 2023
+- **Use Case**: Comprehensive biorisk assessment in single tool
+
+<Info>
+BioRAM-2022 represents the newest approach, integrating both safety and security assessments into a unified workflow. This reduces redundancy and provides a holistic view of laboratory risk.
+</Info>
+
+### Java Application
+
+**Version 4.0.5** - Current Java Release
+- **Formats**: 
+  - `bioram-4.0.5.exe` (Windows executable, ~7.6 MB)
+  - `bioram-4.0.5.jar` (Cross-platform JAR, ~7.2 MB)
+- **Assessment Models**: Requires separate .raml files for biosafety or biosecurity
+- **Languages**: Multiple translations available (English, Spanish, French, Russian, Arabic, Indonesian)
+- **Features**: 
+  - Save and resume assessments
+  - Export results
+  - Customizable assessment models
+  - Full graphical user interface
+
+## Version Timeline
+
+### 2016 - Initial Releases
+
+**BioRAM-Safety-2016**
+- First dedicated biosafety assessment tool
+- Focus on laboratory safety risks
+- File size: ~148 KB
+- Excel-based questionnaire format
+
+**BioRAM-Security-2016**
+- Initial biosecurity assessment version
+- Focus on intentional misuse and theft risks
+- File size: ~267 KB
+- Separate from safety assessment
+
+### 2017 - Security Update
+
+**BioRAM-Security-2017**
+- Enhanced biosecurity assessment
+- Expanded questions and risk factors
+- Improved security control evaluation
+- File size: ~306 KB (larger question set)
+- Maintained separation from safety assessment
+
+<Note>
+The 2016 and 2017 versions required users to conduct separate safety and security assessments, which could lead to duplicated effort when both were needed.
+</Note>
+
+### 2020 - Security Refinement
+
+**BioRAM-Security-2020**
+- Streamlined biosecurity assessment
+- Refined question set based on field experience
+- Improved usability and clarity
+- File size: ~122 KB (more focused)
+- Reflects updated biosecurity best practices
+
+### 2022 - Integrated Assessment
+
+**BioRAM-2022 (BioRisk)**
+- **Major Innovation**: Combined safety and security in single tool
+- **Efficiency**: Eliminates duplicate questions across assessments
+- **Comprehensive**: Addresses biorisk holistically
+- **Beta Status**: Ongoing refinement based on user feedback
+- **2023 Update**: Bug fixes and improvements (December 2023)
+
+### Java Application Evolution
+
+**Version 4.0.5** (Current)
+- Enhanced user interface
+- Multi-language support (10 language variants)
+- Improved file handling and save functionality
+- Source code available (Java source.zip)
+- Compatible with Windows, macOS, and Linux
+
+**Assessment Model Files (.raml)**
+- `Biosafety.raml` - Biosafety assessment model
+- `Biosecurity.raml` - Biosecurity assessment model
+- Translated versions: Spanish (es), French (fr), Russian (ru), Arabic (AR), Indonesian (id)
+- `BiosecurityAugust2015.raml` - Earlier biosecurity model version
+
+## Version Comparison
+
+### Excel vs Java
+
+| Feature | Excel Version | Java Version 4.0.5 |
+|---------|---------------|--------------------|
+| **Platform** | Windows, macOS with Excel | Cross-platform (Windows, macOS, Linux) |
+| **Installation** | None (just open file) | Requires Java Runtime Environment |
+| **File Format** | .xlsx (Excel 2007+) | .exe or .jar with .raml files |
+| **Save Progress** | Standard Excel save | Built-in save/load functionality |
+| **Customization** | Moderate (Excel knowledge) | Advanced (edit .raml files) |
+| **Results** | In-spreadsheet | Exportable reports |
+| **Languages** | English only (Excel) | 6 languages available |
+| **File Size** | 122-306 KB | 7.2-7.6 MB |
+| **Updates** | Receive new Excel file | Update .raml models |
+
+### Assessment Type Comparison
+
+| Assessment Type | Latest Version | Year | Integrated? |
+|-----------------|----------------|------|-------------|
+| **Biosafety Only** | BioRAM-Safety-2016 | 2016 | No |
+| **Biosecurity Only** | BioRAM-Security-2020 | 2020 | No |
+| **Combined BioRisk** | BioRAM-2022 (BioRisk) | 2022 | Yes |
+| **Java (either type)** | Version 4.0.5 + .raml | 2014-2015 models | No |
+
+## Which Version Should You Use?
+
+### Choose BioRAM-2022 (BioRisk) Excel if:
+
+<Check>
+- You need both safety and security assessment
+- You prefer working in Excel
+- You want the most recent integrated methodology
+- You're conducting a comprehensive biorisk evaluation
+- You have Microsoft Excel 2007 or later
+</Check>
+
+### Choose Separate Excel Versions if:
+
+<Check>
+- You only need biosafety OR biosecurity assessment (not both)
+- You want the most focused questionnaire for your specific need
+- You're using BioRAM-Security-2020 for latest security-only assessment
+- You're continuing with previously started assessments
+</Check>
+
+### Choose Java Version 4.0.5 if:
+
+<Check>
+- You need multi-language support
+- You're working on non-Windows platforms without Excel
+- You want advanced save/resume functionality
+- You need to customize assessment models
+- You're conducting multiple assessments and want consistent data management
+- You prefer a dedicated application interface
+</Check>
+
+## Backward Compatibility
+
+### Excel Versions
+
+- **Not backward compatible**: Each version is a separate file
+- **Migration**: No automated migration between versions
+- **Recommendation**: Complete assessments in the version you started with
+- **New assessments**: Use BioRAM-2022 for comprehensive assessment
+
+### Java Version
+
+- **Model compatibility**: Version 4.0.5 works with older .raml model files
+- **Save files**: Assessments saved in v4.0.5 may not open in earlier versions
+- **Recommendation**: Use consistent Java version across your organization
+
+<Warning>
+If you've started an assessment in an older version, complete it in that version to avoid data loss or inconsistency. Start new assessments in the latest appropriate version.
+</Warning>
+
+## Example Files and Templates
+
+### Monkey Pox Example
+
+Two example assessments demonstrating the BioRAM-2022 methodology:
+
+- `BioRAM-2022 (BioRisk) - MonkeyPox.xlsx`
+- `BioRAM-2022 (BioRisk) - MonkeyPox-updated Dec 2023.xlsx`
+- `Monkey Pox Example.docx` - Detailed walkthrough
+
+**Use Case**: Laboratory conducting diagnostics on monkeypox (mpox)
+
+**Purpose**: Demonstrates how to:
+- Apply BioRAM to a real-world scenario
+- Complete integrated biorisk assessment
+- Interpret results and identify mitigation measures
+- Document assessment findings
+
+## Language Support
+
+### Java Version Languages
+
+The Java application supports multiple languages through translated .raml files:
+
+- **English**: Biosafety.raml, Biosecurity.raml
+- **Spanish (Español)**: BiosafetyRAM_es.raml, BiosecurityRAM_es.raml
+- **French (Français)**: BiosafetyRAM_fr.raml, BiosecurityRAM_fr.raml
+- **Russian (Русский)**: BiosafetyRAM_v2_ru.raml, BiosecurityRAM_v2_ru.raml
+- **Arabic (العربية)**: Biosafety_AR.raml, Biosecurity_AR.raml
+- **Indonesian (Bahasa Indonesia)**: BiosafetyRAM_v2_id.raml, BiosecurityRAM_v2_id.raml
+
+<Info>
+Multi-language support enables BioRAM use across different countries and regulatory frameworks, promoting international standardization of risk assessment practices.
+</Info>
+
+## Source Code Availability
+
+For developers and advanced users:
+
+- **Java Source**: `Java source.zip` (~7.1 MB)
+- **RAM Engine**: `RAM Engine.zip` (~13.1 MB)
+- **Full Package**: `CDC BioRAM.zip` (~6.7 MB)
+
+**License**: Check included documentation for licensing terms
+
+**Use Cases**:
+- Custom modifications
+- Integration with other systems
+- Understanding assessment logic
+- Creating custom assessment models
+- Academic research on risk assessment methodologies
+
+## Update Notifications
+
+BioRAM is maintained by Sandia National Laboratories and the Centers for Disease Control and Prevention.
+
+For the latest versions and updates:
+- Check official CDC/Sandia distribution channels
+- Review documentation included with each release
+- Monitor for security patches or methodology updates
+
+<Note>
+Always verify you're using the official version from trusted sources. The included README.md file and documentation should reference Sandia National Laboratories and CDC.
+</Note>
+
+## Migration Guidance
+
+### Moving to BioRAM-2022
+
+If you're currently using separate safety and security assessments:
+
+1. **Complete existing assessments** in their current versions
+2. **Review BioRAM-2022** to understand the integrated approach
+3. **Use the Monkey Pox example** to familiarize yourself with the new format
+4. **Start new assessments** in BioRAM-2022 for comprehensive evaluation
+5. **Retain historical assessments** for comparison and trending
+
+### Adopting Java Version
+
+If switching from Excel to Java:
+
+1. **Install Java Runtime Environment** (JRE 8 or later recommended)
+2. **Review BioRAM 4.0 Directions** PDF for setup instructions
+3. **Select appropriate .raml file** (Biosafety.raml or Biosecurity.raml)
+4. **Test with sample assessment** before production use
+5. **Establish file naming conventions** for saved assessments
+
+## Related Tools
+
+### ChemSAM - Chemical Security Assessment
+
+Included in the BioRAM distribution:
+
+- `ChemSAM.raml` - Chemical security assessment model
+- `ChemSAM_chemicals_rsp.raml` - Specific chemical risk profiles
+- Uses the same RAM Engine as BioRAM
+- Applies similar methodology to chemical security risks
+
+<Info>
+ChemSAM demonstrates the flexibility of the RAM Engine framework for different types of risk assessment beyond biological agents.
+</Info>

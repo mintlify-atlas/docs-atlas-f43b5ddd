@@ -1,0 +1,653 @@
+---
+title: Java Version Guide
+description: Complete guide to using the BioRAM Java application for laboratory risk assessments
+---
+
+The BioRAM Java application provides a software-based alternative to the Excel version, offering a dedicated user interface for conducting biosafety and biosecurity risk assessments.
+
+## Overview
+
+BioRAM 4.0.5 is a standalone Java application that guides users through structured risk assessments using configurable data models stored in .raml files.
+
+### Key Features
+
+- Dedicated user interface for risk assessments
+- Support for multiple languages
+- Separate biosafety and biosecurity assessment models
+- Save and reload assessment files
+- Generate formatted reports
+- Cross-platform compatibility (Windows, Mac, Linux)
+
+## System Requirements
+
+<Note>
+BioRAM 4.0 requires Java Runtime Environment (JRE) version 7 or later to be installed on your system.
+</Note>
+
+### Checking Java Installation
+
+To verify Java is installed:
+
+<Tabs>
+  <Tab title="Windows">
+    Open Command Prompt and run:
+    ```bash
+    java -version
+    ```
+    
+    You should see output similar to:
+    ```
+    java version "1.8.0_XXX"
+    Java(TM) SE Runtime Environment (build X.X.X)
+    ```
+  </Tab>
+  
+  <Tab title="Mac/Linux">
+    Open Terminal and run:
+    ```bash
+    java -version
+    ```
+    
+    If Java is not installed, you'll be prompted to install it or directed to download from:
+    - Oracle JDK: https://www.oracle.com/java/technologies/downloads/
+    - OpenJDK: https://openjdk.org/
+  </Tab>
+</Tabs>
+
+## Launching the Application
+
+BioRAM 4.0.5 is available in two formats:
+
+<Tabs>
+  <Tab title="Windows Executable (.exe)">
+    ### Using bioram-4.0.5.exe
+    
+    The .exe file is a Windows-specific launcher that includes the Java runtime wrapper.
+    
+    <Steps>
+      <Step title="Locate the file">
+        Navigate to your BioRAM installation directory and find `bioram-4.0.5.exe`
+      </Step>
+      
+      <Step title="Double-click to launch">
+        Simply double-click the .exe file to start the application
+        
+        <Note>
+        If Windows SmartScreen appears, click "More info" and "Run anyway" - this is a standard warning for unsigned applications.
+        </Note>
+      </Step>
+      
+      <Step title="Select the .raml model file">
+        On first launch, you'll be prompted to select a .raml file:
+        - Choose `Biosafety.raml` for biosafety assessments
+        - Choose `Biosecurity.raml` for biosecurity assessments
+      </Step>
+    </Steps>
+    
+    **Best for:**
+    - Windows users who prefer simple double-click launching
+    - Users less familiar with command-line operations
+    - Quick access without opening a terminal
+  </Tab>
+  
+  <Tab title="Java Archive (.jar)">
+    ### Using bioram-4.0.5.jar
+    
+    The .jar file is the cross-platform Java application that works on Windows, Mac, and Linux.
+    
+    <Steps>
+      <Step title="Open terminal/command prompt">
+        Navigate to the directory containing the .jar file:
+        ```bash
+        cd /path/to/bioram/directory
+        ```
+      </Step>
+      
+      <Step title="Launch with Java">
+        Run the application:
+        ```bash
+        java -jar bioram-4.0.5.jar
+        ```
+        
+        <Note>
+        You may need to specify the full path to the .jar file if you're in a different directory.
+        </Note>
+      </Step>
+      
+      <Step title="Select the .raml model file">
+        The application will open and prompt you to load a .raml file to begin your assessment.
+      </Step>
+    </Steps>
+    
+    **Best for:**
+    - Mac and Linux users
+    - Scripted or automated deployments
+    - Running from network drives
+    - Users comfortable with command-line operations
+  </Tab>
+</Tabs>
+
+### Troubleshooting Launch Issues
+
+<AccordionGroup>
+  <Accordion title="Application won't start">
+    - Verify Java is installed: `java -version`
+    - Ensure you have Java 7 or later (Java 8+ recommended)
+    - Check that the .jar or .exe file is not corrupted
+    - Try running from command line to see error messages
+  </Accordion>
+  
+  <Accordion title="'Java is not recognized' error">
+    - Java is not in your system PATH
+    - Add Java to PATH or use the full path to java.exe
+    - Reinstall Java and ensure "Add to PATH" is selected
+  </Accordion>
+  
+  <Accordion title="GUI doesn't appear">
+    - Your system may lack graphical display support
+    - Try running in a graphical environment
+    - Check Java AWT/Swing compatibility on your OS
+  </Accordion>
+</AccordionGroup>
+
+## Understanding .raml Files
+
+### What are .raml Files?
+
+RAML files (Risk Assessment Markup Language) are data model files that define:
+
+- Assessment questions and structure
+- Risk scoring algorithms
+- Question categories and organization
+- Available response options
+- Calculation formulas
+
+<Note>
+.raml files are actually ZIP archives containing XML-based configuration data. They define the entire assessment framework used by BioRAM.
+</Note>
+
+### Available .raml Files
+
+BioRAM 4.0.5 includes several .raml files for different purposes and languages:
+
+#### English Assessment Models
+
+| File | Purpose |
+|------|--------|
+| **Biosafety.raml** | Standard biosafety risk assessment (English) |
+| **Biosecurity.raml** | Standard biosecurity risk assessment (English) |
+| **BiosecurityAugust2015.raml** | Legacy biosecurity model from August 2015 |
+
+#### Translated Versions
+
+BioRAM supports multiple languages with localized .raml files:
+
+| Language | Code | Biosafety File | Biosecurity File |
+|----------|------|----------------|------------------|
+| **Spanish** | es | BiosafetyRAM_es.raml | BiosecurityRAM_es.raml |
+| **French** | fr | BiosafetyRAM_fr.raml | BiosecurityRAM_fr.raml |
+| **Indonesian** | id | BiosafetyRAM_v2_id.raml | BiosecurityRAM_v2_id.raml |
+| **Russian** | ru | BiosafetyRAM_v2_ru.raml | BiosecurityRAM_v2_ru.raml |
+| **Arabic** | ar | Biosafety_AR.raml | Biosecurity_AR.raml |
+
+<Warning>
+Always ensure the .raml file is in the same directory as the BioRAM application (.jar or .exe) or provide the full path when loading the model.
+</Warning>
+
+### Selecting the Right .raml File
+
+<Steps>
+  <Step title="Choose the assessment type">
+    Decide whether you need:
+    - **Biosafety assessment**: Evaluates biological hazards, exposure risks, and safety controls
+    - **Biosecurity assessment**: Evaluates theft/misuse risks and security measures
+  </Step>
+  
+  <Step title="Select the language">
+    Choose the language version that matches your team's primary language:
+    - English: Use `Biosafety.raml` or `Biosecurity.raml`
+    - Other languages: Use the appropriate localized version
+  </Step>
+  
+  <Step title="Use current versions">
+    Unless you need compatibility with historical assessments:
+    - Use `Biosafety.raml` (not legacy versions)
+    - Use `Biosecurity.raml` (not BiosecurityAugust2015.raml)
+  </Step>
+</Steps>
+
+## User Interface Overview
+
+The BioRAM Java application provides a structured interface for conducting assessments:
+
+### Main Interface Components
+
+#### 1. Menu Bar
+
+- **File**: New assessment, Open, Save, Save As, Export, Exit
+- **Edit**: Undo, Redo, Copy, Paste
+- **View**: Zoom, Layout options
+- **Tools**: Preferences, Settings
+- **Help**: About, User Guide, Version information
+
+#### 2. Navigation Panel
+
+Located on the left side, showing:
+- Assessment sections and categories
+- Progress indicators
+- Question groups
+- Quick navigation to incomplete sections
+
+#### 3. Question Panel
+
+The main central area displaying:
+- Current question text
+- Response options (dropdowns, checkboxes, text fields)
+- Contextual help and guidance
+- Question numbering and progress
+
+#### 4. Summary Panel
+
+Shows:
+- Current risk scores
+- Completion percentage
+- Flagged items requiring attention
+- Overall risk rating
+
+### Navigation Tips
+
+- Use **Next** and **Previous** buttons to move between questions
+- Click on section names in the navigation panel to jump to specific areas
+- **Save frequently** to avoid losing work
+- Questions marked with asterisks (*) are typically required fields
+
+## Creating New Assessments
+
+<Steps>
+  <Step title="Start BioRAM and load a .raml file">
+    Launch the application and select your desired assessment model:
+    
+    ```bash
+    java -jar bioram-4.0.5.jar
+    ```
+    
+    When prompted, choose `Biosafety.raml` or `Biosecurity.raml`
+  </Step>
+  
+  <Step title="Create a new assessment">
+    From the menu bar:
+    - Click **File > New Assessment**
+    - A blank assessment form will appear
+  </Step>
+  
+  <Step title="Enter facility information">
+    The first section typically includes:
+    - Laboratory/facility name
+    - Location and address
+    - Assessment date
+    - Assessor name(s) and contact information
+    - Laboratory biosafety level (BSL)
+    - Type of facility (academic, clinical, production, etc.)
+  </Step>
+  
+  <Step title="Enter agent information">
+    Provide details about the biological agent(s):
+    - Scientific name (genus, species, strain)
+    - Common name
+    - Risk group classification
+    - Disease caused
+    - Transmission route
+    - Quantities and forms handled
+  </Step>
+  
+  <Step title="Complete assessment questions">
+    Work through each section systematically:
+    
+    **For Biosafety Assessments:**
+    - Inherent agent characteristics
+    - Procedures and exposure potential
+    - Engineering controls
+    - Administrative controls
+    - Personal protective equipment
+    - Personnel competency and training
+    
+    **For Biosecurity Assessments:**
+    - Consequence of theft or misuse
+    - Attractiveness to potential adversaries
+    - Physical security measures
+    - Personnel reliability
+    - Inventory accountability
+    - Information security
+  </Step>
+  
+  <Step title="Review calculated risks">
+    Navigate to the summary/results section to view:
+    - Overall risk score
+    - Category-specific scores
+    - Risk matrix positioning
+    - Areas requiring mitigation
+  </Step>
+  
+  <Step title="Document mitigation measures">
+    Record planned or implemented controls:
+    - Engineering improvements
+    - Policy changes
+    - Training enhancements
+    - Timeline for implementation
+    - Responsible parties
+  </Step>
+</Steps>
+
+<Note>
+The exact structure and questions depend on which .raml file you loaded. The interface dynamically generates the assessment form based on the model definition.
+</Note>
+
+## Saving and Loading Assessment Files
+
+### Saving Your Work
+
+<Tabs>
+  <Tab title="Save New Assessment">
+    For a new assessment being saved for the first time:
+    
+    <Steps>
+      <Step title="Click File > Save As">
+        Opens the save dialog window
+      </Step>
+      
+      <Step title="Choose save location">
+        Navigate to your desired directory (preferably a dedicated assessments folder)
+      </Step>
+      
+      <Step title="Enter filename">
+        Use a descriptive naming convention:
+        ```
+        [Facility]-[Agent]-[Type]-[Date]
+        ```
+        
+        Example: `UnivLab3-Ecoli-Biosafety-2026-03-04`
+      </Step>
+      
+      <Step title="Click Save">
+        BioRAM saves the assessment in its proprietary format
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Save Existing Assessment">
+    To save changes to an assessment you're working on:
+    
+    - **File > Save** (or Ctrl+S / Cmd+S)
+    - Overwrites the existing file with current data
+    - No dialog box appears - saves immediately
+    
+    <Warning>
+    Save frequently during long assessments to prevent data loss.
+    </Warning>
+  </Tab>
+  
+  <Tab title="Save As New Version">
+    To create a revised version while keeping the original:
+    
+    - **File > Save As**
+    - Choose a new filename (add version number or date)
+    - Original file remains unchanged
+    
+    Example versioning:
+    ```
+    Lab3-Biosafety-2026-01-15-v1.0
+    Lab3-Biosafety-2026-03-04-v2.0
+    ```
+  </Tab>
+</Tabs>
+
+### Loading Saved Assessments
+
+<Steps>
+  <Step title="Launch BioRAM with the correct .raml file">
+    Ensure you load the same .raml file that was used to create the assessment:
+    
+    - Biosafety assessments require `Biosafety.raml`
+    - Biosecurity assessments require `Biosecurity.raml`
+    
+    <Warning>
+    Loading an assessment with the wrong .raml file may cause errors or data loss.
+    </Warning>
+  </Step>
+  
+  <Step title="Open the assessment file">
+    - Click **File > Open**
+    - Navigate to your saved assessment file
+    - Select the file and click **Open**
+  </Step>
+  
+  <Step title="Verify data loaded correctly">
+    Check that:
+    - Facility information is present
+    - Responses to questions are populated
+    - Risk scores display correctly
+  </Step>
+</Steps>
+
+### File Management Best Practices
+
+- **Organize by facility**: Create separate folders for each laboratory
+- **Use version control**: Keep previous versions when updating assessments
+- **Regular backups**: Copy assessment files to secure backup locations
+- **Access control**: Store in secured directories if assessments contain sensitive information
+- **Annual reviews**: Schedule yearly reassessments and maintain historical records
+
+## Generating Reports
+
+BioRAM 4.0 can generate formatted reports summarizing your assessment results.
+
+<Steps>
+  <Step title="Complete the assessment">
+    Ensure all required sections are filled out completely
+  </Step>
+  
+  <Step title="Access the report function">
+    - Click **File > Export Report** or **File > Generate Report**
+    - (Exact menu option may vary by version)
+  </Step>
+  
+  <Step title="Configure report options">
+    Select what to include:
+    - Executive summary
+    - Detailed responses
+    - Risk matrices and charts
+    - Mitigation recommendations
+    - Appendices and references
+  </Step>
+  
+  <Step title="Choose output format">
+    Available formats may include:
+    - PDF (most common)
+    - HTML
+    - RTF/Word document
+    - Plain text
+  </Step>
+  
+  <Step title="Save the report">
+    - Specify filename and location
+    - Click **Generate** or **Export**
+    - Review the generated report for completeness
+  </Step>
+</Steps>
+
+<Note>
+Refer to the **BioRAM 4.0 Directions.pdf** included with your installation for detailed screenshots and step-by-step report generation instructions.
+</Note>
+
+### Report Contents
+
+A typical BioRAM report includes:
+
+1. **Cover page**: Facility name, assessment date, assessor information
+2. **Executive summary**: Overall risk rating and key findings
+3. **Agent information**: Details about the biological agents assessed
+4. **Risk assessment results**: Scores for each category and overall risk
+5. **Risk matrices**: Visual representation of likelihood vs. consequence
+6. **Gap analysis**: Identified deficiencies in controls
+7. **Mitigation recommendations**: Specific actions to reduce risk
+8. **Detailed responses**: Complete question-by-question breakdown (optional)
+9. **Appendices**: Supporting documentation, references, glossary
+
+## BioRAM 4.0 Features
+
+### Key Capabilities
+
+#### Multi-Language Support
+
+BioRAM 4.0.5 supports assessments in:
+- English
+- Spanish (Español)
+- French (Français)
+- Indonesian (Bahasa Indonesia)
+- Russian (Русский)
+- Arabic (العربية)
+
+Simply load the appropriate .raml file to conduct assessments in your preferred language.
+
+#### Flexible Assessment Models
+
+The .raml architecture allows:
+- Customizable question sets
+- Institution-specific risk criteria
+- Updated models without changing the core application
+- Maintaining consistency across multiple facilities
+
+#### Integrated Calculations
+
+Automatic risk scoring based on:
+- Response patterns
+- Weighted factors
+- Combination rules
+- Threshold criteria
+
+#### Progress Tracking
+
+- Visual indicators show assessment completion percentage
+- Flagged items highlight incomplete or high-risk areas
+- Section-by-section progress bars
+- Validation checks for required fields
+
+### Advantages Over Excel Version
+
+| Feature | Java Version | Excel Version |
+|---------|--------------|---------------|
+| **Guided workflow** | Structured step-by-step interface | User must navigate tabs |
+| **Data validation** | Built-in validation and error checking | Limited validation |
+| **Consistency** | Standardized interface across users | Can be modified or broken |
+| **Language support** | Easy language switching via .raml files | Requires separate Excel files |
+| **Version control** | Single application version | Multiple Excel file versions |
+| **Portability** | Works on Windows, Mac, Linux | Requires Excel or compatible software |
+
+<Note>
+Both versions use the same underlying risk assessment methodology. Choose based on your preference, technical environment, and available resources.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Cannot load .raml file">
+    **Symptoms**: Error message when trying to load Biosafety.raml or Biosecurity.raml
+    
+    **Solutions**:
+    - Ensure the .raml file is in the same directory as bioram-4.0.5.jar
+    - Check that the .raml file is not corrupted (verify file size matches original)
+    - Try using the absolute file path when loading
+    - Verify the .raml file has read permissions
+  </Accordion>
+  
+  <Accordion title="Assessment won't save">
+    **Symptoms**: Save operation fails or file doesn't appear
+    
+    **Solutions**:
+    - Check write permissions on the destination folder
+    - Ensure sufficient disk space
+    - Avoid special characters in filename
+    - Try saving to a different location (Desktop, Documents)
+    - Close and reopen BioRAM, then try saving again
+  </Accordion>
+  
+  <Accordion title="Risk scores not calculating">
+    **Symptoms**: Summary shows zeros or blank values
+    
+    **Solutions**:
+    - Ensure all required questions are answered
+    - Check that you used dropdown/radio button selections (not manual text)
+    - Navigate through all sections to trigger calculations
+    - Try clicking "Recalculate" if such an option exists
+    - Reload the .raml file and reopen your assessment
+  </Accordion>
+  
+  <Accordion title="Wrong language displays">
+    **Symptoms**: Interface shows unexpected language
+    
+    **Solutions**:
+    - Verify you loaded the correct .raml file:
+      - English: `Biosafety.raml` or `Biosecurity.raml`
+      - Spanish: `BiosafetyRAM_es.raml` or `BiosecurityRAM_es.raml`
+      - Etc.
+    - Close BioRAM and restart with the correct .raml file
+    - Check system locale settings if interface language differs from content
+  </Accordion>
+  
+  <Accordion title="Report generation fails">
+    **Symptoms**: Export fails or produces blank/incomplete reports
+    
+    **Solutions**:
+    - Complete all required sections before exporting
+    - Try a different output format (PDF vs. HTML)
+    - Check write permissions in output directory
+    - Ensure sufficient memory (close other applications)
+    - Review BioRAM 4.0 Directions.pdf for specific export instructions
+  </Accordion>
+</AccordionGroup>
+
+## Additional Resources
+
+### Documentation
+
+- **BioRAM 4.0 Directions.pdf**: Step-by-step guide with screenshots for using the Java application
+- **BioRAM UserGuide SAND.pdf**: Comprehensive methodology guide applicable to both Excel and Java versions
+
+### Getting Help
+
+If you encounter issues not covered in this guide:
+
+1. Consult the **BioRAM 4.0 Directions.pdf** for detailed instructions
+2. Review the **BioRAM UserGuide SAND** for methodology questions
+3. Check that you're using compatible Java version (7 or later)
+4. Verify all files (bioram-4.0.5.jar, .raml files) are from the same distribution
+
+### Best Practices
+
+- **Keep software updated**: Use the latest version of BioRAM and Java
+- **Maintain .raml files**: Don't modify .raml files unless you understand the data structure
+- **Regular backups**: Keep copies of both the application and your assessment files
+- **Training**: Ensure assessors understand biosafety/biosecurity principles, not just the software
+- **Quality review**: Have assessments peer-reviewed before finalizing
+
+## Comparison with Excel Version
+
+Both tools are equally valid for conducting BioRAM assessments:
+
+**Choose Java version if you:**
+- Prefer guided, software-driven workflows
+- Need multilingual support
+- Want built-in validation and error checking
+- Work across different operating systems
+- Require institutional standardization
+
+**Choose Excel version if you:**
+- Prefer familiar spreadsheet interface
+- Need to customize assessment forms
+- Want easier data export/manipulation
+- Don't have Java installed or can't install software
+- Need to integrate with other Excel-based tools
+
+<Note>
+See the Excel Version Guide for complete details on using BioRAM Excel tools.
+</Note>

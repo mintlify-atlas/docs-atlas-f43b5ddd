@@ -1,0 +1,433 @@
+---
+title: Excel Version Guide
+description: Complete guide to using BioRAM Excel-based risk assessment tools
+---
+
+BioRAM provides Excel-based tools for conducting biosafety and biosecurity laboratory risk assessments. This guide will help you choose the right Excel file and perform comprehensive assessments.
+
+## Overview
+
+The Excel versions of BioRAM offer a spreadsheet-based approach to risk assessment, requiring no software installation beyond Microsoft Excel or compatible spreadsheet applications.
+
+### Available Excel Files
+
+BioRAM includes several Excel files for different assessment needs:
+
+- **BioRAM-2022 (BioRisk).xlsx** - The newest integrated tool (beta)
+- **BioRAM-2022 (BioRisk)-updated Dec 2023.xlsx** - Latest update with improvements
+- **BioRAM-Safety-2016.xlsx** - Standalone biosafety assessment
+- **BioRAM-Security-2020.xlsx** - Standalone biosecurity assessment
+- **BioRAM-Security-2017.xlsx** - Previous security version
+- **BioRAM-Security-2016.xlsx** - Legacy security version
+
+<Note>
+The MonkeyPox example files demonstrate completed assessments for a laboratory conducting diagnostics on monkey pox virus.
+</Note>
+
+## Which Excel File Should You Use?
+
+<Tabs>
+  <Tab title="Integrated Assessment (Recommended)">
+    **Use BioRAM-2022 (BioRisk)-updated Dec 2023.xlsx**
+    
+    This is the newest version that combines both biosafety and biosecurity assessments into a single comprehensive tool.
+    
+    **Best for:**
+    - Complete laboratory risk assessments
+    - Facilities requiring both safety and security evaluation
+    - New assessments starting in 2023 or later
+    - Comprehensive biorisk management programs
+    
+    **Features:**
+    - Integrated safety and security scoring
+    - Unified risk matrix
+    - Streamlined data entry
+    - Combined reporting
+    
+    <Warning>
+    This version is still in beta. While functional, you may encounter minor issues. Report any problems for future improvements.
+    </Warning>
+  </Tab>
+  
+  <Tab title="Separate Assessments">
+    **Use BioRAM-Safety-2016.xlsx and BioRAM-Security-2020.xlsx**
+    
+    These standalone tools allow you to conduct biosafety and biosecurity assessments independently.
+    
+    **Best for:**
+    - Focusing on only biosafety or biosecurity
+    - Laboratories with separate safety and security programs
+    - Compatibility with older assessment records
+    - More detailed domain-specific evaluations
+    
+    **When to use each:**
+    - **BioRAM-Safety-2016.xlsx**: Assessing biological agent hazards, containment practices, and laboratory biosafety levels
+    - **BioRAM-Security-2020.xlsx**: Evaluating security measures, access control, inventory management, and theft/misuse risks
+  </Tab>
+</Tabs>
+
+## Getting Started
+
+<Steps>
+  <Step title="Open the Excel file">
+    Download and open your chosen BioRAM Excel file in Microsoft Excel or a compatible application (LibreOffice Calc, Google Sheets with limitations).
+    
+    <Note>
+    Enable macros if prompted, as some calculations may use Excel formulas and features.
+    </Note>
+  </Step>
+  
+  <Step title="Review the instruction sheet">
+    Most BioRAM Excel files begin with an introduction or instructions worksheet. Read this carefully to understand:
+    - The assessment methodology
+    - How risk scores are calculated
+    - Special considerations for your laboratory type
+  </Step>
+  
+  <Step title="Enter facility information">
+    Navigate to the facility information section and complete:
+    - Laboratory name and location
+    - Assessment date
+    - Assessor names and roles
+    - Laboratory biosafety level (BSL-1, BSL-2, BSL-3, BSL-4)
+    - Type of work conducted
+  </Step>
+</Steps>
+
+## Navigating the Spreadsheet
+
+BioRAM Excel files are organized into multiple worksheets, each serving a specific purpose:
+
+### Common Worksheet Structure
+
+| Worksheet | Purpose |
+|-----------|--------|
+| **Introduction/Instructions** | Overview of the assessment methodology and guidance |
+| **Facility Information** | Basic laboratory details and contact information |
+| **Agent Information** | Details about biological agents being assessed |
+| **Risk Factors** | Questions and scoring for various risk categories |
+| **Risk Assessment** | Automated risk calculations and matrices |
+| **Mitigation** | Recommended controls and risk reduction measures |
+| **Summary/Report** | Final risk scores and executive summary |
+
+<Note>
+Worksheet names and organization may vary slightly between versions. Use the tab names at the bottom of Excel to navigate between sections.
+</Note>
+
+## Filling Out Assessment Sections
+
+### Agent Information
+
+For the biological agent(s) being assessed, provide:
+
+<Steps>
+  <Step title="Identify the agent">
+    - Scientific name (genus and species)
+    - Common name
+    - Strain or variant if applicable
+  </Step>
+  
+  <Step title="Characterize the hazard">
+    - Disease caused
+    - Transmission route (aerosol, contact, vector-borne)
+    - Risk group classification (1-4)
+    - Select agent status (if applicable)
+  </Step>
+  
+  <Step title="Describe the work">
+    - Procedures performed (culture, diagnostics, animal work)
+    - Quantities handled
+    - Frequency of work
+    - Number of personnel with access
+  </Step>
+</Steps>
+
+### Risk Factor Assessment
+
+The risk factor section contains questions organized by category. For each question:
+
+1. **Read the question carefully** - Understand what aspect of risk is being evaluated
+2. **Select the appropriate response** - Usually a dropdown menu or radio button
+3. **Provide justification** - Document why you selected that response
+4. **Attach evidence** - Reference SOPs, training records, or facility documents
+
+#### Biosafety Risk Categories
+
+- **Inherent Agent Risk**: Pathogenicity, virulence, environmental stability
+- **Exposure Potential**: Procedures, quantities, aerosol generation
+- **Personnel Competency**: Training, experience, supervision
+- **Engineering Controls**: Biological safety cabinets, HVAC, directional airflow
+- **Administrative Controls**: SOPs, access restrictions, medical surveillance
+- **Personal Protective Equipment**: Gloves, lab coats, respirators
+
+#### Biosecurity Risk Categories
+
+- **Consequence of Loss**: Potential for misuse, public health impact
+- **Attractiveness to Theft**: Dual-use potential, ease of weaponization
+- **Physical Security**: Locks, alarms, intrusion detection
+- **Personnel Security**: Background checks, insider threat programs
+- **Inventory Management**: Tracking, accountability, reconciliation
+- **Information Security**: Access to protocols, data protection
+
+<Warning>
+Be honest and thorough in your assessments. Underestimating risks can lead to inadequate controls and potential incidents.
+</Warning>
+
+## Understanding Risk Scores and Results
+
+### Risk Calculation
+
+BioRAM uses a matrix-based approach to calculate risk:
+
+```
+Risk = Likelihood × Consequence
+```
+
+- **Likelihood**: Probability that an exposure or security breach will occur
+- **Consequence**: Severity of impact if the event occurs
+
+### Risk Levels
+
+Results are typically categorized as:
+
+| Risk Level | Score Range | Interpretation | Action Required |
+|------------|-------------|----------------|------------------|
+| **Very Low** | 1-4 | Minimal risk | Standard controls adequate |
+| **Low** | 5-9 | Acceptable with current controls | Monitor periodically |
+| **Medium** | 10-16 | Moderate risk | Implement additional controls |
+| **High** | 17-25 | Significant risk | Immediate mitigation required |
+
+<Note>
+Exact scoring ranges may vary between BioRAM versions. Refer to the scoring guide in your specific Excel file.
+</Note>
+
+### Risk Matrix Interpretation
+
+The BioRAM 2022 integrated version provides:
+
+- **Combined Biorisk Score**: Overall facility risk profile
+- **Biosafety Score**: Safety-specific risk level
+- **Biosecurity Score**: Security-specific risk level
+- **Priority Areas**: Sections requiring immediate attention
+
+### Reviewing Results
+
+Navigate to the Summary or Report worksheet to view:
+
+1. **Overall risk rating** - Your laboratory's final risk classification
+2. **Category breakdown** - Risk scores for each assessment area
+3. **Gap analysis** - Controls that are missing or inadequate
+4. **Recommended mitigation** - Specific actions to reduce risk
+
+## Mitigation and Risk Reduction
+
+Based on your assessment results, the Excel tool will recommend:
+
+### Control Hierarchy
+
+<Steps>
+  <Step title="Elimination">
+    Can you eliminate the hazard entirely?
+    - Use a less dangerous agent
+    - Discontinue unnecessary procedures
+    - Reduce quantities to minimum needed
+  </Step>
+  
+  <Step title="Substitution">
+    Can you substitute with something safer?
+    - Use inactivated agents for training
+    - Employ simulants for protocol development
+    - Consider in vitro vs. animal models
+  </Step>
+  
+  <Step title="Engineering Controls">
+    Install or upgrade physical safeguards:
+    - Biological safety cabinets
+    - Sealed centrifuge rotors
+    - HEPA filtration
+    - Access control systems
+  </Step>
+  
+  <Step title="Administrative Controls">
+    Implement policies and procedures:
+    - Standard operating procedures
+    - Training programs
+    - Medical surveillance
+    - Inventory management systems
+  </Step>
+  
+  <Step title="Personal Protective Equipment">
+    Provide appropriate PPE (least effective control):
+    - Laboratory coats
+    - Gloves
+    - Eye protection
+    - Respirators when required
+  </Step>
+</Steps>
+
+## Saving and Exporting Reports
+
+### Saving Your Assessment
+
+<Steps>
+  <Step title="Save with a descriptive name">
+    Use a naming convention that includes:
+    ```
+    BioRAM-[FacilityName]-[AgentName]-[Date].xlsx
+    ```
+    
+    Example: `BioRAM-Lab3-EcoliO157-2026-03-04.xlsx`
+  </Step>
+  
+  <Step title="Maintain version control">
+    Keep previous versions when updating assessments:
+    - Annual reassessments
+    - After facility changes
+    - Following incidents or near-misses
+    - When adding new agents or procedures
+  </Step>
+  
+  <Step title="Store securely">
+    Risk assessments may contain sensitive information:
+    - Store in access-controlled locations
+    - Encrypt if required by policy
+    - Back up regularly
+    - Limit distribution to need-to-know personnel
+  </Step>
+</Steps>
+
+### Generating Reports
+
+<Tabs>
+  <Tab title="PDF Export">
+    To create a permanent record:
+    
+    1. Select the worksheets to include (use Ctrl+Click to select multiple tabs)
+    2. Go to File > Print or File > Export as PDF
+    3. Choose "Entire Workbook" or "Selected Sheets"
+    4. Configure page layout (landscape often works better)
+    5. Save as PDF with a descriptive name
+    
+    <Note>
+    Review the PDF to ensure all data and charts are clearly visible before finalizing.
+    </Note>
+  </Tab>
+  
+  <Tab title="Summary Report">
+    Many BioRAM Excel files include a pre-formatted summary sheet:
+    
+    1. Navigate to the Summary or Report worksheet
+    2. Verify all data has populated correctly
+    3. Add any additional narrative or context
+    4. Print or export just this sheet for executive summaries
+    5. Include recommended mitigation measures
+  </Tab>
+  
+  <Tab title="Data Export">
+    To integrate with other systems:
+    
+    1. Export specific worksheets as CSV files
+    2. Copy data to your organization's risk management database
+    3. Import into statistical analysis tools if conducting program-wide assessments
+    
+    <Warning>
+    Remove sensitive information before exporting to non-secure systems.
+    </Warning>
+  </Tab>
+</Tabs>
+
+## Example: MonkeyPox Assessment
+
+The BioRAM package includes example files for a laboratory conducting diagnostics on monkeypox virus:
+
+- **BioRAM-2022 (BioRisk) - MonkeyPox-updated Dec 2023.xlsx**
+
+This completed example demonstrates:
+
+- How to fill out agent information for an orthopoxvirus
+- Appropriate risk factor selections for diagnostic work
+- Typical biosafety controls for BSL-2 work with monkeypox
+- Biosecurity considerations for a select agent
+- Completed risk matrices and mitigation recommendations
+
+<Note>
+Use this example as a reference when conducting your own assessments, but ensure all selections reflect your specific laboratory conditions.
+</Note>
+
+## Best Practices
+
+### Conduct Assessments Collaboratively
+
+- Involve laboratory supervisors, biosafety officers, and frontline workers
+- Include facility managers for engineering control questions
+- Engage security personnel for biosecurity sections
+- Consider external reviewers for objectivity
+
+### Document Thoroughly
+
+- Provide specific justifications for each response
+- Reference supporting documents (SOPs, training records, facility drawings)
+- Note assumptions and limitations
+- Record dissenting opinions if team members disagree
+
+### Review and Update Regularly
+
+- Annual reassessments at minimum
+- After any significant changes:
+  - New agents or procedures
+  - Facility modifications
+  - Personnel changes
+  - Incidents or near-misses
+  - Regulatory updates
+
+### Link to Risk Management
+
+- Use assessment results to prioritize improvements
+- Track mitigation implementation
+- Measure effectiveness of control measures
+- Incorporate into institutional biosafety and biosecurity programs
+
+## Troubleshooting
+
+### Common Issues
+
+<AccordionGroup>
+  <Accordion title="Formulas showing errors">
+    - Ensure macros are enabled
+    - Check that all required fields are completed
+    - Verify you're using a compatible Excel version (2010 or later)
+    - Try opening in Microsoft Excel rather than alternative applications
+  </Accordion>
+  
+  <Accordion title="Dropdowns not working">
+    - Protected worksheets may prevent editing certain cells
+    - Look for an "Unprotect Sheet" option in the Review tab
+    - Ensure you're clicking in the correct input cells (often highlighted)
+  </Accordion>
+  
+  <Accordion title="Risk scores seem incorrect">
+    - Verify all sections are completed
+    - Check for hidden worksheets that contain reference data
+    - Review the scoring methodology in the instructions
+    - Ensure dropdown selections were made (not manual text entry)
+  </Accordion>
+  
+  <Accordion title="Cannot save or export">
+    - Check file permissions on the save location
+    - Ensure the file isn't open in another application
+    - Try "Save As" with a new filename
+    - Close and reopen Excel if it becomes unresponsive
+  </Accordion>
+</AccordionGroup>
+
+## Additional Resources
+
+For detailed methodology and examples, refer to:
+
+- **BioRAM UserGuide SAND.pdf** - Comprehensive guide to BioRAM methods and risk assessment principles
+- **Example assessments** - MonkeyPox files showing completed evaluations
+- **Java version** - Alternative software-based tool with additional features
+
+<Note>
+The BioRAM UserGuide SAND provides the theoretical foundation and detailed explanation of the risk assessment methodology used in all BioRAM tools.
+</Note>

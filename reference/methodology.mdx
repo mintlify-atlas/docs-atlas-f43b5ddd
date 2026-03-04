@@ -1,0 +1,229 @@
+---
+title: Assessment Methodology
+description: Scientific basis and methodology for BioRAM risk assessments
+---
+
+## Overview
+
+BioRAM (Biosafety and Biosecurity Laboratory Risk Assessment Tool) provides a structured methodology for evaluating biological risks in laboratory settings. The tool uses a question-based approach to systematically assess safety and security risks.
+
+## Scientific Basis
+
+BioRAM's methodology is grounded in established biosafety and biosecurity principles, drawing from:
+
+- **CDC Guidelines**: Centers for Disease Control and Prevention biosafety standards
+- **WHO Laboratory Biosafety Manual**: World Health Organization best practices
+- **International Biosafety Standards**: Globally recognized laboratory safety protocols
+- **BMBL (Biosafety in Microbiological and Biomedical Laboratories)**: U.S. standard reference
+
+The assessment framework was developed through collaboration between laboratory safety experts, biosecurity professionals, and risk assessment specialists.
+
+<Info>
+Detailed methodology and scientific validation are documented in the **BioRAM UserGuide SAND** report, available in the source distribution.
+</Info>
+
+## Risk Assessment Framework
+
+### Dual Assessment Approach
+
+BioRAM provides separate assessments for two distinct risk domains:
+
+**Biosafety Assessment**
+- Evaluates risks to laboratory personnel and the environment
+- Focuses on accidental exposure and containment failures
+- Considers pathogen characteristics, laboratory procedures, and safety controls
+- Maps to Biosafety Level (BSL) requirements
+
+**Biosecurity Assessment**
+- Evaluates risks of intentional misuse or theft of biological materials
+- Focuses on access control, inventory management, and personnel reliability
+- Considers threat actors, material attractiveness, and security measures
+- Identifies vulnerabilities in physical and operational security
+
+### Integrated BioRisk Assessment (2022)
+
+The BioRAM-2022 (BioRisk) version combines both safety and security assessments into a single integrated tool, recognizing that:
+
+- Safety and security risks often overlap
+- Comprehensive risk management requires addressing both domains
+- Integrated assessment improves efficiency and identifies cross-cutting risks
+
+## Question-Based Methodology
+
+### Risk Factor Mapping
+
+BioRAM uses structured questionnaires that map to specific risk factors:
+
+1. **Agent Characteristics**
+   - Pathogenicity and virulence
+   - Route of transmission
+   - Availability of prophylaxis or treatment
+   - Environmental stability
+
+2. **Laboratory Activities**
+   - Procedures performed (culture, concentration, aerosolization)
+   - Volumes and concentrations handled
+   - Equipment and containment used
+   - Frequency and duration of work
+
+3. **Personnel Factors**
+   - Training and competency
+   - Immunization status
+   - Medical surveillance programs
+   - Safety culture and compliance
+
+4. **Facility and Engineering Controls**
+   - Containment barriers (primary and secondary)
+   - Ventilation and air handling systems
+   - Decontamination capabilities
+   - Emergency response systems
+
+5. **Administrative and Operational Controls**
+   - Standard operating procedures
+   - Access control and authorization
+   - Inventory and accountability systems
+   - Incident reporting and investigation
+
+### Assessment Process
+
+The methodology follows a systematic evaluation process:
+
+<Steps>
+  <Step title="Define Scope">
+    Identify the specific laboratory, agents, and procedures to be assessed
+  </Step>
+  
+  <Step title="Complete Questionnaire">
+    Answer structured questions about risk factors and control measures
+  </Step>
+  
+  <Step title="Risk Evaluation">
+    Tool processes responses to evaluate risk levels across different categories
+  </Step>
+  
+  <Step title="Results Analysis">
+    Review risk scores, identify gaps, and prioritize mitigation actions
+  </Step>
+  
+  <Step title="Mitigation Planning">
+    Develop action plans to address identified risks and deficiencies
+  </Step>
+</Steps>
+
+## Risk Scoring and Evaluation
+
+### Qualitative Risk Assessment
+
+BioRAM employs a qualitative risk assessment approach that:
+
+- Categorizes risks into levels (e.g., Low, Medium, High)
+- Uses expert judgment encoded in the assessment logic
+- Considers multiple factors simultaneously
+- Provides context-specific risk characterization
+
+### Risk Level Determination
+
+Risk levels are determined through:
+
+1. **Factor Weighting**: Different risk factors carry different weights based on their relative importance
+2. **Combinatorial Analysis**: Multiple factors are evaluated together to determine overall risk
+3. **Control Effectiveness**: Existing control measures reduce risk levels
+4. **Residual Risk**: Final assessment reflects risk remaining after controls are applied
+
+<Note>
+BioRAM uses a decision-tree approach where answers to specific questions guide the assessment through different risk pathways, ensuring that the evaluation is tailored to the specific laboratory context.
+</Note>
+
+## Assessment Types and Applications
+
+### When to Use Each Assessment
+
+**Biosafety Assessment** - Use when:
+- Conducting initial biosafety level determination
+- Evaluating new procedures or agents
+- Investigating incidents or near-misses
+- Periodic review of laboratory operations
+- Compliance verification
+
+**Biosecurity Assessment** - Use when:
+- Assessing Select Agent facilities
+- Evaluating security vulnerabilities
+- Implementing access control systems
+- Personnel reliability program review
+- Regulatory compliance (e.g., Federal Select Agent Program)
+
+**Integrated BioRisk Assessment** - Use when:
+- Comprehensive risk management is required
+- Addressing both safety and security concerns
+- Strategic planning and resource allocation
+- Institutional risk assessment programs
+
+## Validation and Quality Assurance
+
+### Peer Review
+
+The BioRAM methodology has undergone:
+
+- Expert panel review by biosafety professionals
+- Field testing in diverse laboratory settings
+- International validation across different regulatory frameworks
+- Continuous improvement based on user feedback
+
+### Limitations and Considerations
+
+Users should be aware that:
+
+- Assessment results depend on accurate and complete information
+- Professional judgment is required to interpret results
+- BioRAM supports but does not replace expert risk assessment
+- Local regulations and institutional policies may require additional considerations
+- Results should be validated by qualified biosafety professionals
+
+<Warning>
+BioRAM is a decision-support tool. Final risk determinations and mitigation decisions should be made by qualified biosafety and biosecurity professionals with appropriate expertise.
+</Warning>
+
+## Documentation and Reporting
+
+BioRAM supports comprehensive documentation:
+
+- **Assessment Records**: Complete record of questions and answers
+- **Risk Profiles**: Visual and textual summary of risk levels
+- **Gap Analysis**: Identification of deficiencies and areas for improvement
+- **Action Plans**: Recommended mitigation measures
+- **Historical Tracking**: Ability to compare assessments over time
+
+### Regulatory Compliance
+
+Assessment documentation can support:
+
+- Biosafety Committee review
+- Institutional Biosafety Committee (IBC) submissions
+- Regulatory inspections and audits
+- Accreditation processes
+- Continuous improvement programs
+
+## References and Resources
+
+For detailed methodology documentation:
+
+- **BioRAM UserGuide SAND**: Comprehensive methodology guide and examples
+- **BioRAM 4.0 Directions**: User instructions for the Java application
+- **Monkey Pox Example**: Sample assessment demonstrating methodology application
+
+These documents are included in the BioRAM distribution package.
+
+## Standards Referenced
+
+BioRAM methodology aligns with:
+
+- CDC/NIH Biosafety in Microbiological and Biomedical Laboratories (BMBL)
+- WHO Laboratory Biosafety Manual (4th edition)
+- CEN Workshop Agreement (CWA) 15793 Laboratory Biorisk Management
+- ISO 35001 Biorisk management for laboratories and other related organizations
+- Federal Select Agent Program regulations (42 CFR Part 73, 9 CFR Part 121, 7 CFR Part 331)
+- OECD Best Practice Guidelines for Biological Resource Centres
+
+<Info>
+The methodology is designed to be compatible with various national and international biosafety frameworks, making it adaptable to different regulatory environments.
+</Info>

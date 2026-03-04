@@ -1,0 +1,562 @@
+---
+title: Frequently Asked Questions
+description: Common questions about using BioRAM for biosafety and biosecurity assessment
+---
+
+## Getting Started
+
+<AccordionGroup>
+  <Accordion title="Excel vs Java version - which should I choose?">
+    **Choose Excel version if:**
+    - You need quick setup with no installation
+    - You're comfortable working in Microsoft Excel
+    - You're doing a one-time or occasional assessment
+    - You prefer a familiar spreadsheet interface
+    - You only need English language support
+
+    **Choose Java version if:**
+    - You need multi-language support (Spanish, French, Russian, Arabic, Indonesian)
+    - You're working on macOS or Linux without Excel
+    - You want robust save/resume functionality
+    - You're conducting regular assessments and want consistent data management
+    - You need to customize assessment models
+    - You prefer a dedicated application interface
+
+    **Bottom line**: For most users, the Excel version is simpler to start with. Choose Java if you need specific features like language support or advanced customization.
+  </Accordion>
+
+  <Accordion title="What Java version is required for the Java application?">
+    The BioRAM Java application (version 4.0.5) requires:
+    
+    - **Java Runtime Environment (JRE) 8 or later**
+    - Both Windows (.exe) and cross-platform (.jar) versions available
+    
+    **To check your Java version:**
+    ```bash
+    java -version
+    ```
+    
+    **If Java is not installed:**
+    - Download from [java.com](https://www.java.com)
+    - Or install OpenJDK from your package manager
+    
+    **Windows users**: The .exe file may include an embedded Java runtime, but having Java installed separately is recommended.
+
+    <Info>
+    See the "BioRAM 4.0 Directions" PDF included in the distribution for detailed installation instructions.
+    </Info>
+  </Accordion>
+
+  <Accordion title="Do I need separate safety and security assessments?">
+    It depends on your requirements:
+
+    **Use BioRAM-2022 (BioRisk) - Integrated Version:**
+    - Conducts both safety and security in one assessment
+    - Reduces duplicate questions
+    - Provides comprehensive biorisk evaluation
+    - **Recommended for most facilities**
+
+    **Use separate assessments when:**
+    - You only need to evaluate one domain (safety OR security)
+    - Your regulatory requirements specify separate assessments
+    - You're updating a previous safety-only or security-only assessment
+    - You want the most detailed questionnaire for a specific domain
+
+    **Regulatory considerations:**
+    - Some facilities (e.g., Select Agent labs) may require formal biosecurity assessments
+    - Institutional Biosafety Committees may require biosafety assessments
+    - Check your local regulations and institutional policies
+
+    <Note>
+    The integrated BioRAM-2022 version is currently in beta but represents the recommended approach for comprehensive risk assessment.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+## Using BioRAM
+
+<AccordionGroup>
+  <Accordion title="How long does an assessment take?">
+    Assessment time varies based on several factors:
+
+    **Typical timeframes:**
+    - **Biosafety-only**: 30-60 minutes
+    - **Biosecurity-only**: 45-90 minutes
+    - **Integrated BioRisk (BioRAM-2022)**: 60-120 minutes
+    - **First-time users**: Add 30-50% more time
+
+    **Factors that affect duration:**
+    - Laboratory complexity
+    - Number of agents and procedures
+    - Availability of information (SOPs, facility specs, etc.)
+    - Familiarity with the tool
+    - Whether you need to gather information during assessment
+
+    **Tips for efficient assessment:**
+    - Gather necessary documents beforehand (SOPs, facility drawings, inventory records)
+    - Involve relevant personnel (biosafety officer, facility manager, laboratory supervisor)
+    - Review example assessments first (e.g., Monkey Pox example)
+    - Use the save functionality (Java) or save Excel file frequently
+
+    <Info>
+    The assessment is iterative. You can complete it over multiple sessions by saving your progress.
+    </Info>
+  </Accordion>
+
+  <Accordion title="Can I save partial assessments and resume later?">
+    **Excel version:**
+    - Save the Excel file at any time using standard Excel save (Ctrl+S or File > Save)
+    - Resume by opening the saved file
+    - Use descriptive filenames (e.g., "Lab5_BioRAM_2024-03-04.xlsx")
+    - Consider saving versions as you progress
+
+    **Java version:**
+    - Built-in save/load functionality through the application menu
+    - Saves assessment state and all responses
+    - Can maintain multiple assessment files
+    - Load previously saved assessments to continue or review
+
+    **Best practices:**
+    - Save regularly during assessment (every 10-15 minutes)
+    - Use clear naming conventions that include lab/facility identifier and date
+    - Keep backup copies of completed assessments
+    - Don't save over previous completed assessments—create new files instead
+
+    <Warning>
+    For Excel versions, ensure you're saving with a new filename if creating a variant assessment. Don't overwrite the blank template.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Can I customize questions or risk factors?">
+    **Excel version:**
+    - **Limited customization** - You can modify the spreadsheet if you have Excel expertise
+    - Not recommended unless you understand the assessment logic
+    - May break formulas or assessment calculations
+    - Custom versions may not be comparable to standard assessments
+
+    **Java version:**
+    - **Advanced customization** - Edit .raml files to modify questions, risk factors, and logic
+    - Requires understanding of RAML format and assessment methodology
+    - Source code available for deeper modifications
+    - Can create entirely custom assessment models
+
+    **Considerations:**
+    - Customized assessments may not reflect validated methodology
+    - Changes should be reviewed by biosafety/biosecurity experts
+    - Document all customizations for transparency
+    - May affect regulatory compliance or institutional acceptance
+
+    **When customization makes sense:**
+    - Adapting to specific national regulations
+    - Adding institution-specific requirements
+    - Creating specialized assessments for unique laboratories
+    - Research on risk assessment methodologies
+
+    <Note>
+    If you need to customize BioRAM, consult with biosafety professionals and consider peer review of your modifications to ensure scientific validity.
+    </Note>
+  </Accordion>
+
+  <Accordion title="What if I don't know the answer to a question?">
+    Several strategies can help:
+
+    **Gather information:**
+    - Consult laboratory SOPs and safety manuals
+    - Talk to laboratory personnel (PIs, technicians, safety officers)
+    - Review facility documentation and engineering specifications
+    - Check with facility/biosafety office
+
+    **Make informed estimates:**
+    - Use professional judgment based on similar situations
+    - Choose the more conservative (higher risk) option when uncertain
+    - Document assumptions in assessment notes
+
+    **Flag for follow-up:**
+    - Mark questions you're uncertain about
+    - Include in action items to gather definitive information
+    - Consider conducting a preliminary assessment, then refining
+
+    **Incomplete information strategy:**
+    - Complete what you can
+    - Identify information gaps as risk factors themselves
+    - Use assessment to drive process improvements (e.g., better documentation)
+
+    <Warning>
+    Never guess on critical safety or security questions. If information is unavailable, this may indicate a gap in your laboratory's documentation or procedures that should be addressed.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+## Results and Compliance
+
+<AccordionGroup>
+  <Accordion title="Are BioRAM results legally compliant?">
+    BioRAM is a **decision-support tool**, not a regulatory requirement in itself.
+
+    **Regulatory context:**
+    - BioRAM helps demonstrate due diligence in risk assessment
+    - May support compliance with biosafety and biosecurity regulations
+    - Used by CDC and other agencies but not mandated by regulation
+    - Results should be reviewed by qualified professionals
+
+    **Applicable regulations may include:**
+    - Federal Select Agent Program (42 CFR 73, 9 CFR 121, 7 CFR 331)
+    - OSHA Bloodborne Pathogen Standard (29 CFR 1910.1030)
+    - NIH Guidelines for Research Involving Recombinant or Synthetic Nucleic Acid Molecules
+    - Institutional biosafety committee requirements
+    - State and local regulations
+
+    **Compliance usage:**
+    - Document risk assessments for IBC review
+    - Support biosafety level determinations
+    - Identify gaps in compliance
+    - Demonstrate systematic risk management approach
+
+    **Important limitations:**
+    - BioRAM does not replace professional judgment
+    - Institutional Biosafety Officer or Biosafety Committee must review
+    - Local regulations may have additional requirements
+    - Assessment quality depends on accurate input
+
+    <Info>
+    Consult your institutional biosafety officer, legal counsel, or regulatory affairs office about specific compliance requirements for your facility.
+    </Info>
+  </Accordion>
+
+  <Accordion title="How do I interpret the risk scores?">
+    BioRAM provides qualitative risk assessment with categorized results:
+
+    **Risk levels typically include:**
+    - **Low Risk**: Current controls are adequate
+    - **Medium Risk**: Enhanced controls or monitoring may be beneficial
+    - **High Risk**: Additional controls strongly recommended
+
+    **Interpreting results:**
+    1. **Review overall risk profile** - Understand the big picture
+    2. **Identify specific high-risk areas** - Focus mitigation efforts
+    3. **Evaluate control gaps** - Where are controls missing or inadequate?
+    4. **Prioritize actions** - Address highest risks first
+    5. **Consider context** - Results must be interpreted by qualified professionals
+
+    **Results are most useful when:**
+    - Reviewed by biosafety/biosecurity professionals
+    - Discussed with laboratory personnel
+    - Used to develop action plans
+    - Tracked over time to measure improvements
+    - Compared against similar facilities or industry benchmarks
+
+    **Action planning:**
+    - High-risk findings should trigger immediate review
+    - Medium-risk findings may require enhanced controls
+    - Low-risk findings confirm adequate controls but require ongoing monitoring
+
+    <Note>
+    BioRAM results are a starting point for discussion and decision-making, not a final determination. Professional expertise is essential for proper interpretation.
+    </Note>
+  </Accordion>
+
+  <Accordion title="How often should I conduct BioRAM assessments?">
+    Assessment frequency depends on several factors:
+
+    **Recommended frequency:**
+    - **Initially**: When establishing a new laboratory or procedure
+    - **Annually**: As part of routine safety/security program review
+    - **After changes**: When significant changes occur
+    - **Post-incident**: After accidents, near-misses, or security events
+    - **Regulatory**: As required by your institution or regulations
+
+    **Triggers for reassessment:**
+    - New biological agents introduced
+    - Changes in procedures or protocols
+    - Facility modifications (construction, equipment changes)
+    - Personnel changes (new staff, training updates)
+    - Regulatory or guideline updates
+    - Audit findings or incident investigations
+    - Significant changes in threat environment (for security)
+
+    **Best practices:**
+    - Schedule annual reviews even if no major changes
+    - Document the assessment date and any changes from previous assessments
+    - Maintain historical assessments to track trends
+    - Use reassessment to verify effectiveness of previous mitigation measures
+
+    **Institutional requirements:**
+    - Check IBC requirements
+    - Review institutional biosafety manual
+    - Coordinate with biosafety office
+
+    <Info>
+    Regular reassessment demonstrates ongoing commitment to safety and security, and helps identify emerging risks before they lead to incidents.
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+## Technical Issues
+
+<AccordionGroup>
+  <Accordion title="The Java application won't start. What should I do?">
+    **Common solutions:**
+
+    **1. Verify Java is installed:**
+    ```bash
+    java -version
+    ```
+    If not installed, download from [java.com](https://www.java.com)
+
+    **2. Try the .jar file directly:**
+    ```bash
+    java -jar bioram-4.0.5.jar
+    ```
+
+    **3. Check file permissions:**
+    - On Linux/macOS, ensure the .jar or .exe is executable
+    - On Windows, right-click > Properties > Unblock if needed
+
+    **4. Verify required files:**
+    - Ensure .raml files are in the same directory or specified location
+    - Check that files weren't corrupted during download
+
+    **5. Review error messages:**
+    - Run from command line to see error output
+    - Common errors: Java version mismatch, missing dependencies, file path issues
+
+    **6. Consult documentation:**
+    - Review "BioRAM 4.0 Directions" PDF
+    - Check for platform-specific instructions
+
+    **Platform-specific tips:**
+    - **Windows**: Try running as administrator
+    - **macOS**: You may need to allow the app in Security & Privacy settings
+    - **Linux**: Ensure java executable is in PATH
+
+    <Warning>
+    If you continue to have issues, verify you downloaded the files from an official source and that they haven't been corrupted or tampered with.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Can I use BioRAM on macOS or Linux?">
+    **Yes, with some platform considerations:**
+
+    **Excel versions:**
+    - Require Microsoft Excel for macOS (not included in free versions)
+    - Alternative: Use LibreOffice or Google Sheets (compatibility may vary)
+    - Some Excel features may behave differently on macOS
+    - Windows Excel recommended for best compatibility
+
+    **Java version:**
+    - **Fully cross-platform** - Works on Windows, macOS, and Linux
+    - Use the .jar file: `java -jar bioram-4.0.5.jar`
+    - The .exe file is Windows-only
+
+    **macOS specifics:**
+    - Install Java from Oracle or use OpenJDK via Homebrew
+    - First launch may require approval in Security & Privacy settings
+    - Command line: `java -jar bioram-4.0.5.jar`
+
+    **Linux specifics:**
+    - Install OpenJDK from package manager (e.g., `sudo apt install default-jre`)
+    - May need to make .jar executable: `chmod +x bioram-4.0.5.jar`
+    - Command line: `java -jar bioram-4.0.5.jar`
+
+    **Recommendation:**
+    If you're on macOS or Linux without Excel, the Java version is your best option and works seamlessly across platforms.
+
+    <Info>
+    The Java version's cross-platform compatibility makes it ideal for organizations using mixed computing environments.
+    </Info>
+  </Accordion>
+
+  <Accordion title="Which .raml file should I use with the Java version?">
+    The Java application requires a .raml file that defines the assessment model:
+
+    **For Biosafety Assessments:**
+    - **English**: `Biosafety.raml`
+    - **Spanish**: `BiosafetyRAM_es.raml`
+    - **French**: `BiosafetyRAM_fr.raml`
+    - **Russian**: `BiosafetyRAM_v2_ru.raml`
+    - **Arabic**: `Biosafety_AR.raml`
+    - **Indonesian**: `BiosafetyRAM_v2_id.raml`
+
+    **For Biosecurity Assessments:**
+    - **English**: `Biosecurity.raml`
+    - **Spanish**: `BiosecurityRAM_es.raml`
+    - **French**: `BiosecurityRAM_fr.raml`
+    - **Russian**: `BiosecurityRAM_v2_ru.raml`
+    - **Arabic**: `Biosecurity_AR.raml`
+    - **Indonesian**: `BiosecurityRAM_v2_id.raml`
+
+    **Older version:**
+    - `BiosecurityAugust2015.raml` - Earlier biosecurity model
+
+    **How to select:**
+    1. Launch the Java application
+    2. When prompted, navigate to and select the appropriate .raml file
+    3. Or specify the .raml file via command line
+
+    **Language selection:**
+    - Choose the language file that matches your preferred language
+    - Questions and interface will appear in that language
+    - All files use the same underlying methodology
+
+    <Note>
+    Keep all .raml files in the same directory as the Java application for easy access and organization.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+## Support and Resources
+
+<AccordionGroup>
+  <Accordion title="How do I get support for BioRAM?">
+    BioRAM is provided as-is with documentation:
+
+    **Included Documentation:**
+    - **README.md**: Overview and quick start
+    - **BioRAM UserGuide SAND.pdf**: Comprehensive methodology and examples
+    - **BioRAM 4.0 Directions.pdf**: Java application user guide
+    - **Monkey Pox Example.docx**: Detailed example assessment walkthrough
+
+    **Self-Help Resources:**
+    - Review the comprehensive user guide (SAND report)
+    - Study the Monkey Pox example files
+    - Examine the example assessments included in distribution
+    - Review this FAQ and documentation
+
+    **Institutional Support:**
+    - Contact your institutional biosafety officer
+    - Consult with your Institutional Biosafety Committee (IBC)
+    - Work with your facility safety/security office
+    - Engage biosafety consultants if needed
+
+    **Developer Support:**
+    - Source code is available for technical review
+    - Can be customized by Java developers
+    - Review RAM Engine documentation for architecture
+
+    **Official Sources:**
+    - Centers for Disease Control and Prevention (CDC)
+    - Sandia National Laboratories
+    - Check for updated versions through official channels
+
+    <Info>
+    BioRAM is a product of CDC and Sandia National Laboratories. For questions about methodology or official versions, contact CDC's Office of Safety, Security, and Asset Management.
+    </Info>
+  </Accordion>
+
+  <Accordion title="Where can I find example assessments?">
+    Several example files are included in the BioRAM distribution:
+
+    **Monkey Pox Assessment Examples:**
+    - `BioRAM-2022 (BioRisk) - MonkeyPox.xlsx`
+    - `BioRAM-2022 (BioRisk) - MonkeyPox-updated Dec 2023.xlsx`
+    - `Monkey Pox Example.docx` - Detailed walkthrough document
+
+    **Scenario**: Laboratory conducting diagnostics on monkeypox (mpox)
+
+    **What you'll learn:**
+    - How to complete each section of the assessment
+    - How to answer questions about agent characteristics
+    - How to evaluate laboratory procedures and controls
+    - How to interpret results
+    - How to identify and document mitigation measures
+
+    **How to use examples:**
+    1. **Review before starting** your own assessment
+    2. **Compare your responses** to similar scenarios
+    3. **Understand the logic** of risk evaluation
+    4. **Use as a template** for documentation style
+    5. **Training tool** for new users
+
+    **Creating your own examples:**
+    - Save completed assessments as templates
+    - Document lessons learned
+    - Share within your institution (while protecting sensitive information)
+    - Build institutional knowledge base
+
+    <Warning>
+    Example assessments are for educational purposes. Your actual assessment must reflect your specific laboratory conditions, agents, and procedures.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Can I share or publish BioRAM assessments?">
+    **Considerations before sharing:**
+
+    **Security concerns:**
+    - Biosecurity assessments may contain sensitive information
+    - Facility vulnerabilities should be protected
+    - Agent inventories may be sensitive
+    - Access control details should be restricted
+
+    **Appropriate sharing:**
+    - **Within institution**: Share with biosafety committee, safety office, facility management
+    - **With regulators**: Provide to inspectors/auditors as required
+    - **Peer review**: Share with biosafety professionals for consultation (redact sensitive details)
+    - **Training**: Use de-identified versions for educational purposes
+
+    **Public disclosure:**
+    - Generally not recommended for actual facility assessments
+    - Biosecurity information should be protected
+    - Consult institutional policies and legal counsel
+    - May be required under freedom of information laws (with redactions)
+
+    **Publishing/research:**
+    - De-identify facility and specific details
+    - Aggregate or anonymize data
+    - Focus on methodology rather than specific results
+    - Obtain institutional approval
+
+    **Tool distribution:**
+    - The BioRAM tool itself can be shared
+    - Provide official versions from CDC/Sandia sources
+    - Include all documentation
+
+    <Warning>
+    Biosecurity assessments contain sensitive vulnerability information. Protect these documents appropriately and limit distribution to those with a need to know.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="What's the difference between BioRAM and ChemSAM?">
+    Both use the same Risk Assessment Model (RAM) Engine but for different hazards:
+
+    **BioRAM (Biological Risk Assessment Model):**
+    - Assesses biological agents (bacteria, viruses, toxins, fungi)
+    - Biosafety: protection from accidental exposure
+    - Biosecurity: protection from intentional misuse
+    - Based on agent characteristics, laboratory procedures, containment
+
+    **ChemSAM (Chemical Security Assessment Model):**
+    - Assesses chemical security risks
+    - Focus on theft or misuse of hazardous chemicals
+    - Evaluates chemicals of interest (toxic, explosive, etc.)
+    - Based on chemical properties, quantities, security measures
+
+    **Technical similarities:**
+    - Both use .raml format for assessment models
+    - Both run on the same Java application (RAM Engine)
+    - Similar question-based methodology
+    - Same save/load and reporting features
+
+    **Included in distribution:**
+    - `ChemSAM.raml` - Chemical security assessment
+    - `ChemSAM_chemicals_rsp.raml` - Chemical-specific risk profiles
+
+    **When to use:**
+    - **BioRAM**: For biological agents in laboratories
+    - **ChemSAM**: For chemical security programs
+    - **Both**: If your facility handles both biological and chemical hazards
+
+    <Info>
+    The RAM Engine framework demonstrates flexibility for different risk domains. Organizations can develop custom .raml models for other types of risk assessment.
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+## Additional Questions
+
+<Note>
+If your question isn't answered here, consult the **BioRAM UserGuide SAND** document included in the distribution for comprehensive methodology details, or contact your institutional biosafety officer for assessment-specific guidance.
+</Note>
+
+For technical issues with the Java application, review the **BioRAM 4.0 Directions** PDF for detailed troubleshooting steps.
+
+For methodology questions or validation of your assessment approach, consult with qualified biosafety and biosecurity professionals at your institution or engage expert consultants.

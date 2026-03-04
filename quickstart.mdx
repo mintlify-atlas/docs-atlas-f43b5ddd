@@ -1,80 +1,282 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: Quick start
+description: Get started with BioRAM in three simple steps
 ---
 
-## Get started in three steps
+## Overview
 
-Get your documentation site running locally and make your first customization.
+This quick start guide will help you conduct your first risk assessment with BioRAM. Whether you're evaluating biosafety, biosecurity, or chemical security risks, the basic workflow is the same.
 
-### Step 1: Set up your local environment
+<Note>
+Before you begin, make sure you've [downloaded and installed BioRAM](/installation). This guide assumes you have either the Excel or Java version ready to use.
+</Note>
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
+## Choose your format
+
+BioRAM is available in two formats. Choose the one that works best for your needs:
+
+<CardGroup cols={2}>
+  <Card title="Excel version" icon="table" href="/guides/excel-version">
+    Quick to start, familiar interface, no additional software needed
+  </Card>
+  <Card title="Java application" icon="desktop" href="/guides/java-version">
+    Advanced features, multilingual support, enhanced reporting
+  </Card>
+</CardGroup>
+
+## Select your assessment type
+
+Determine which type of risk assessment you need to perform:
+
+<Tabs>
+  <Tab title="Biosafety">
+    **Use for:** Evaluating biological safety risks in laboratories handling infectious agents or potentially hazardous biological materials.
     
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
+    **Key focus areas:**
+    - Agent pathogenicity and characteristics
+    - Laboratory containment measures
+    - Personnel training and procedures
+    - Exposure potential and mitigation
     
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
+    **Files to use:**
+    - Excel: `BioRAM-Safety-2016.xlsx` or `BioRAM-2022 (BioRisk).xlsx`
+    - Java: `Biosafety.raml` with `bioram-4.0.5.jar`
     
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+    [Learn more about biosafety assessment →](/assessments/biosafety)
+  </Tab>
+  
+  <Tab title="Biosecurity">
+    **Use for:** Assessing security measures for biological materials that could pose dual-use concerns or security risks.
+    
+    **Key focus areas:**
+    - Access control and physical security
+    - Personnel reliability and screening
+    - Inventory management
+    - Threat scenarios and vulnerabilities
+    
+    **Files to use:**
+    - Excel: `BioRAM-Security-2020.xlsx` or `BioRAM-2022 (BioRisk).xlsx`
+    - Java: `Biosecurity.raml` with `bioram-4.0.5.jar`
+    
+    [Learn more about biosecurity assessment →](/assessments/biosecurity)
+  </Tab>
+  
+  <Tab title="Integrated BioRisk">
+    **Use for:** Comprehensive assessment combining both safety and security considerations in a unified framework.
+    
+    **Key benefits:**
+    - Holistic risk evaluation
+    - Identifies synergies between safety and security measures
+    - Streamlined assessment process
+    - Optimized resource allocation
+    
+    **Files to use:**
+    - Excel: `BioRAM-2022 (BioRisk).xlsx` (recommended)
+    - Java: Combined assessment using appropriate `.raml` files
+    
+    [Learn more about integrated biorisk →](/assessments/integrated-biorisk)
+  </Tab>
+  
+  <Tab title="Chemical Security">
+    **Use for:** Evaluating security risks associated with hazardous chemicals that could be misused or diverted.
+    
+    **Key focus areas:**
+    - Chemical inventory and tracking
+    - Facility security measures
+    - Personnel access controls
+    - Theft and diversion prevention
+    
+    **Files to use:**
+    - Java: `ChemSAM.raml` with `bioram-4.0.5.jar`
+    
+    [Learn more about ChemSAM →](/guides/chemsam)
+  </Tab>
+</Tabs>
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+## Complete your first assessment
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+Follow these steps to conduct a basic risk assessment:
 
-### Step 3: Go live
+<Steps>
+  <Step title="Open the tool and provide facility information">
+    **Excel version:**
+    1. Open your chosen `.xlsx` file in Microsoft Excel
+    2. Click **Enable Content** to allow macros
+    3. Navigate to the first worksheet (usually "Facility Information" or "Introduction")
+    4. Enter basic information about your laboratory facility
+    
+    **Java version:**
+    1. Launch the application (double-click `.jar` or `.exe`)
+    2. Select **File → New Assessment**
+    3. Choose the appropriate `.raml` file for your assessment type
+    4. Complete the facility information section
+    
+    <Tip>
+    Have the following information ready:
+    - Facility name and location
+    - Laboratory biosafety level (BSL-1, BSL-2, BSL-3, or BSL-4)
+    - Types of agents or chemicals handled
+    - Number of personnel with access
+    </Tip>
+  </Step>
+  
+  <Step title="Answer assessment questions">
+    Work through the structured questionnaire, answering questions about:
+    
+    **For biosafety assessments:**
+    - Agent characteristics (pathogenicity, mode of transmission)
+    - Laboratory design and engineering controls
+    - Standard operating procedures
+    - Personal protective equipment
+    - Personnel training and competency
+    - Emergency response capabilities
+    
+    **For biosecurity assessments:**
+    - Physical security barriers and controls
+    - Access control systems and procedures
+    - Personnel screening and reliability programs
+    - Inventory management and accountability
+    - Cybersecurity measures
+    - Incident detection and response
+    
+    <Note>
+    Answer questions based on your current practices, not idealized scenarios. Honest assessment is critical for identifying real risks and effective mitigation strategies.
+    </Note>
+    
+    **Question format:**
+    - Most questions use multiple-choice or yes/no formats
+    - Some require numeric inputs (e.g., number of personnel, facility size)
+    - Select the option that best describes your current situation
+    - Use "Not Applicable" or "Unknown" options when appropriate
+    
+    <Accordion title="What if I don't know an answer?">
+      If you're uncertain about an answer:
+      1. Consult with relevant personnel (facility managers, safety officers, security personnel)
+      2. Review facility documentation and standard operating procedures
+      3. Conduct a brief site inspection if needed
+      4. Use the "Unknown" option temporarily and flag the question for follow-up
+      5. Consider this an opportunity to identify gaps in your facility's documentation
+    </Accordion>
+  </Step>
+  
+  <Step title="Review risk scores and results">
+    Once you've completed the questionnaire, the tool automatically calculates risk scores.
+    
+    **Understanding your results:**
+    
+    BioRAM typically provides risk scores on a three-tier scale:
+    - **Low risk**: Current measures are adequate; maintain existing controls
+    - **Medium risk**: Additional mitigation recommended; prioritize based on resources
+    - **High risk**: Immediate action required; implement additional controls promptly
+    
+    **What to review:**
+    1. **Overall risk score**: Summary assessment of your facility's risk level
+    2. **Risk by category**: Breakdown by specific risk factors (e.g., containment, procedures, security)
+    3. **Heat maps or risk matrices**: Visual representation of risk distribution
+    4. **Comparison to baselines**: How your facility compares to recommended practices
+    
+    <Accordion title="View example risk output">
+      ```
+      Overall Risk Assessment: MEDIUM
+      
+      Risk by Category:
+      - Agent Hazard Level: HIGH
+      - Containment Measures: MEDIUM
+      - Personnel Training: LOW
+      - Physical Security: MEDIUM
+      - Access Control: HIGH
+      
+      Priority Actions:
+      1. Enhance access control procedures
+      2. Review containment equipment maintenance
+      3. Implement additional security cameras in storage areas
+      ```
+    </Accordion>
+  </Step>
+  
+  <Step title="Identify mitigation measures">
+    Based on your risk scores, the tool recommends specific mitigation measures:
+    
+    **Types of recommendations:**
+    - **Engineering controls**: Physical modifications to enhance safety or security
+    - **Administrative controls**: Policy and procedure improvements
+    - **PPE recommendations**: Personal protective equipment enhancements
+    - **Training needs**: Identified gaps in personnel competency
+    - **Security enhancements**: Physical or procedural security improvements
+    
+    **Prioritizing actions:**
+    1. Address high-risk areas first
+    2. Consider cost-effectiveness and feasibility
+    3. Identify quick wins vs. long-term projects
+    4. Involve relevant stakeholders (management, safety committee, security personnel)
+    
+    <Tip>
+    Create an action plan with:
+    - Specific mitigation measures to implement
+    - Responsible personnel for each action
+    - Target completion dates
+    - Budget estimates if applicable
+    - Success metrics to verify effectiveness
+    </Tip>
+  </Step>
+  
+  <Step title="Save and export your assessment">
+    **Excel version:**
+    - Save the file with a descriptive name (e.g., `BioRAM-MyLab-2024-03.xlsx`)
+    - Export results to PDF if needed for documentation
+    - Print summary pages for safety committee meetings
+    
+    **Java version:**
+    - Select **File → Save As** and choose a location
+    - Use **Export → Generate Report** to create formatted output
+    - Export to PDF, Word, or HTML format as needed
+    
+    <Note>
+    Maintain version control of your assessments. BioRAM assessments should be:
+    - Conducted annually or whenever significant changes occur
+    - Stored securely with access controls
+    - Reviewed by safety/security committees
+    - Used to track improvements over time
+    </Note>
+  </Step>
+</Steps>
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+## Example: Monkey Pox diagnostic laboratory
+
+Want to see a real-world example? Check out the Monkey Pox diagnostic laboratory assessment included with BioRAM:
+
+<Card title="View Monkey Pox example" icon="file-lines" href="/examples/monkey-pox">
+  See how BioRAM was used to assess a laboratory conducting diagnostic testing for Monkey Pox virus
+</Card>
+
+This example demonstrates:
+- How to evaluate a specific pathogen and laboratory scenario
+- Risk scoring for diagnostic activities
+- Recommended mitigation measures
+- Documentation and reporting best practices
 
 ## Next steps
 
-Now that you have your docs running, explore these key features:
-
 <CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
+  <Card title="Excel version guide" icon="table" href="/guides/excel-version">
+    Learn advanced features of the Excel-based tools
+  </Card>
+  <Card title="Java version guide" icon="desktop" href="/guides/java-version">
+    Explore the full capabilities of the Java application
+  </Card>
+  <Card title="Assessment methodology" icon="book" href="/reference/methodology">
+    Understand the scientific basis for BioRAM's risk calculations
+  </Card>
+  <Card title="FAQ" icon="circle-question" href="/reference/faq">
+    Find answers to common questions about using BioRAM
+  </Card>
 </CardGroup>
 
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
+## Getting help
+
+If you need assistance while conducting your assessment:
+
+- Review the [User Guides](/guides/excel-version) for detailed instructions
+- Check the [FAQ](/reference/faq) for common issues and solutions
+- Consult the official BioRAM User Guide PDF included in the repository
+- Reach out to Sandia National Laboratories for technical support

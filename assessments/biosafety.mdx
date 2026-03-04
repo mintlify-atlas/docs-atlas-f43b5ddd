@@ -1,0 +1,311 @@
+---
+title: 'Biosafety Assessment'
+description: 'Evaluate biological safety risks in laboratory environments using structured risk assessment methodology'
+icon: 'shield-virus'
+---
+
+## What is Biosafety Assessment?
+
+Biosafety assessment is a systematic evaluation of biological risks associated with laboratory operations involving infectious agents, biological materials, and related procedures. The BioRAM biosafety assessment tool provides a structured, quantitative approach to identifying, evaluating, and mitigating biological hazards in research, diagnostic, and production facilities.
+
+This assessment methodology helps laboratory safety officers, principal investigators, and facility managers make informed decisions about containment requirements, safety protocols, and risk mitigation strategies.
+
+<Note>
+The biosafety assessment is available in both the standalone Biosafety.raml model (Java application) and the integrated BioRAM-2022 Excel tool. Choose the format that best fits your workflow and technical requirements.
+</Note>
+
+## Key Risk Factors Evaluated
+
+The biosafety assessment examines multiple dimensions of biological risk through a comprehensive questionnaire structure:
+
+### Agent Characteristics
+
+<CardGroup cols={2}>
+  <Card title="Pathogenicity" icon="virus">
+    - Disease severity in humans and animals
+    - Infectious dose and transmission routes
+    - Host range and susceptibility
+    - Availability of prophylaxis and treatment
+  </Card>
+  
+  <Card title="Agent Properties" icon="microscope">
+    - Genetic modification and novel characteristics
+    - Antimicrobial resistance profiles
+    - Environmental stability and persistence
+    - Toxin production capabilities
+  </Card>
+</CardGroup>
+
+### Facility and Containment
+
+**Physical Containment**
+- Laboratory design and construction features
+- Airflow systems and HEPA filtration
+- Biosafety cabinets and protective equipment
+- Decontamination and waste treatment systems
+- Access control and facility separation
+
+**Operational Practices**
+- Standard operating procedures (SOPs)
+- Emergency response protocols
+- Spill and exposure management
+- Equipment maintenance and certification
+- Record keeping and documentation
+
+### Personnel Factors
+
+<AccordionGroup>
+  <Accordion title="Training and Competency">
+    - Biosafety training completion and currency
+    - Technical proficiency with procedures
+    - Understanding of agent-specific risks
+    - Emergency response preparedness
+    - Supervisory oversight and mentoring
+  </Accordion>
+  
+  <Accordion title="Health Surveillance">
+    - Occupational health program participation
+    - Medical screening and immunizations
+    - Exposure monitoring and reporting
+    - Access restrictions for susceptible individuals
+    - Personal protective equipment (PPE) compliance
+  </Accordion>
+</AccordionGroup>
+
+### Procedures and Activities
+
+- Volume and concentration of agent handled
+- Aerosol-generating procedures
+- Animal studies and in vivo work
+- Equipment and technique selection
+- Waste generation and disposal methods
+
+## Assessment Structure and Sections
+
+The biosafety assessment is organized into logical sections that build a comprehensive risk profile:
+
+### Section 1: Facility Information
+Establishes baseline information about the laboratory, institutional context, and regulatory environment.
+
+### Section 2: Agent Characterization
+Detailed evaluation of the biological agent(s) including classification, risk group assignment, and hazard properties.
+
+### Section 3: Procedures and Techniques
+Analysis of specific laboratory activities, equipment use, and potential exposure pathways.
+
+### Section 4: Risk Mitigation Measures
+Documentation of containment features, safety equipment, administrative controls, and PPE.
+
+### Section 5: Training and Personnel
+Assessment of staff qualifications, training programs, and health surveillance.
+
+<Tip>
+Complete the assessment in order, as later sections may reference information from earlier sections. Save your work frequently to preserve your responses.
+</Tip>
+
+## Risk Score Calculation
+
+The biosafety assessment employs a quantitative scoring methodology that integrates multiple risk factors:
+
+### Scoring Components
+
+**Hazard Score**
+- Based on agent characteristics, pathogenicity, and potential consequences
+- Weighted by infectious dose and transmission efficiency
+- Adjusted for genetic modifications or novel properties
+
+**Exposure Probability**
+- Influenced by procedure types and volumes handled
+- Modified by containment effectiveness
+- Adjusted for operational practices and controls
+
+**Risk Mitigation Score**
+- Credits for appropriate containment features
+- Personnel training and competency factors
+- Administrative and engineering controls
+- Emergency preparedness measures
+
+### Overall Risk Calculation
+
+The tool combines these components using validated risk algorithms:
+
+```
+Risk Score = (Hazard × Exposure Probability) / Mitigation Effectiveness
+```
+
+Risk scores are normalized to a standard scale and categorized into risk levels:
+
+<CardGroup cols={3}>
+  <Card title="Low Risk" icon="circle-check" color="#00AA00">
+    Minimal likelihood of laboratory-acquired infection with adequate standard precautions
+  </Card>
+  
+  <Card title="Medium Risk" icon="triangle-exclamation" color="#FFAA00">
+    Moderate risk requiring enhanced containment and operational controls
+  </Card>
+  
+  <Card title="High Risk" icon="octagon-exclamation" color="#CC0000">
+    Significant risk necessitating maximum containment and stringent protocols
+  </Card>
+</CardGroup>
+
+## Interpreting Results
+
+The assessment generates a comprehensive risk report that includes:
+
+### Risk Summary Dashboard
+- Overall risk level with supporting rationale
+- Contributing factors ranked by impact
+- Comparison to recommended biosafety level
+- Identified gaps and deficiencies
+
+### Detailed Risk Analysis
+For each assessment section, the report provides:
+- Individual component scores
+- Key risk drivers and concerns
+- Areas of strength and weakness
+- Specific recommendations for improvement
+
+<Warning>
+A calculated risk score should not be the sole basis for safety decisions. Use the assessment as one input alongside regulatory requirements, institutional policies, and expert consultation.
+</Warning>
+
+## Biosafety Levels (BSL) Context
+
+The biosafety assessment results help determine appropriate biosafety level designation:
+
+### BSL-1: Basic Level
+**Agents**: Well-characterized, no known disease potential in healthy adults
+
+**Practices**: Standard microbiological techniques, minimal special containment
+
+**Equipment**: Open bench work, PPE as needed for general protection
+
+**Facility**: Standard laboratory suitable for teaching and research
+
+---
+
+### BSL-2: Enhanced Level
+**Agents**: Moderate hazard to personnel and environment
+
+**Practices**: BSL-1 plus limited access, biohazard warning signs, sharps precautions
+
+**Equipment**: Biosafety cabinets for aerosol-generating procedures, PPE including lab coats and gloves
+
+**Facility**: BSL-1 plus autoclave available, handwashing sinks
+
+---
+
+### BSL-3: High Containment
+**Agents**: Indigenous or exotic agents with potential for aerosol transmission, serious or lethal disease
+
+**Practices**: BSL-2 plus controlled access, decontamination of all waste, medical surveillance
+
+**Equipment**: BSL-2 plus physical containment devices for all procedures, respiratory protection as needed
+
+**Facility**: Separated from general traffic, self-closing double-door access, directional airflow, HEPA-filtered exhaust
+
+---
+
+### BSL-4: Maximum Containment
+**Agents**: Dangerous and exotic agents with high individual risk of life-threatening disease, aerosol transmission, or unknown transmission
+
+**Practices**: BSL-3 plus entrance through change room, shower on exit, all materials decontaminated on exit
+
+**Equipment**: BSL-3 plus Class III biosafety cabinet or positive pressure suits with dedicated air supply
+
+**Facility**: Separate building or isolated zone, dedicated supply and exhaust systems, multiple containment barriers
+
+<Note>
+The biosafety assessment evaluates whether proposed operations are appropriately matched to the designated biosafety level and identifies any upgrades or modifications needed for compliance.
+</Note>
+
+## Mitigation Recommendations
+
+Based on assessment findings, the tool generates prioritized recommendations across multiple categories:
+
+### Engineering Controls
+- Facility modifications or upgrades
+- Biosafety cabinet installation or certification
+- HVAC and filtration system improvements
+- Autoclave and decontamination equipment
+- Architectural barriers and access control
+
+### Administrative Controls
+- Updated or enhanced SOPs
+- Training program development
+- Medical surveillance program elements
+- Access control policies
+- Emergency response procedures
+
+### Personal Protective Equipment
+- PPE selection based on exposure risk
+- Fit testing and user seal checks
+- Proper donning and doffing procedures
+- PPE maintenance and replacement schedules
+
+### Operational Modifications
+- Alternative procedures or techniques
+- Reduced volumes or concentrations
+- Enhanced supervision requirements
+- Buddy system implementation
+- Scheduled reassessment intervals
+
+<Tip>
+**Prioritization Approach**
+
+1. **Immediate**: Critical safety gaps requiring immediate action before work proceeds
+2. **Short-term**: Important improvements to be implemented within 1-3 months
+3. **Long-term**: Enhancements to further reduce risk over 6-12 months
+4. **Continuous**: Ongoing monitoring, training, and program maintenance
+</Tip>
+
+## Best Practices for Assessment
+
+### Preparation
+- Gather relevant documentation (SOPs, training records, equipment certifications)
+- Involve key personnel (PI, safety officer, facilities staff)
+- Review current biosafety level designation
+- Identify all biological agents to be assessed
+
+### Completion
+- Answer all questions thoroughly and honestly
+- Provide supporting documentation where available
+- Note areas of uncertainty for follow-up
+- Involve subject matter experts as needed
+
+### Follow-up
+- Review results with institutional biosafety committee
+- Develop action plan for identified deficiencies
+- Document corrective actions and timelines
+- Schedule reassessment after major changes
+- Maintain assessment records per institutional policy
+
+<Warning>
+Reassessment is required when:
+- New biological agents are introduced
+- Procedures or techniques change significantly
+- Facility modifications occur
+- Adverse events or near-misses are reported
+- At minimum every 3 years for ongoing activities
+</Warning>
+
+## Additional Resources
+
+<CardGroup cols={2}>
+  <Card title="BioRAM UserGuide" icon="book" href="/reference/methodology">
+    Detailed methodology and scientific basis for risk assessment algorithms
+  </Card>
+  
+  <Card title="Excel Version" icon="table" href="/guides/excel-version">
+    Quick-start guide for using the Excel-based biosafety assessment tool
+  </Card>
+  
+  <Card title="Java Application" icon="desktop" href="/guides/java-version">
+    Advanced features and multilingual support in the Java desktop version
+  </Card>
+  
+  <Card title="Integrated BioRisk" icon="shield-halved" href="/assessments/integrated-biorisk">
+    Combined safety and security assessment using BioRAM-2022
+  </Card>
+</CardGroup>

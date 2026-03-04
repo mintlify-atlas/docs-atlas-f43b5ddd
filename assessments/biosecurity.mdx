@@ -1,0 +1,484 @@
+---
+title: 'Biosecurity Assessment'
+description: 'Assess security measures for protecting biological materials and facilities from unauthorized access and misuse'
+icon: 'lock'
+---
+
+## What is Biosecurity Assessment?
+
+Biosecurity assessment evaluates the security measures protecting biological materials, data, and facilities from theft, diversion, or misuse. The BioRAM biosecurity assessment provides a structured methodology for identifying vulnerabilities, assessing threat scenarios, and implementing appropriate security countermeasures.
+
+While biosafety focuses on protecting personnel and the environment from accidental exposure, biosecurity addresses intentional threats including unauthorized access, theft of dangerous pathogens, insider threats, and sabotage.
+
+<Note>
+The biosecurity assessment is available through the Biosecurity.raml model (Java application) and integrated into the BioRAM-2022 Excel tool. Multiple language versions support international implementation.
+</Note>
+
+## Security Risk Factors
+
+The biosecurity assessment examines multiple dimensions of security risk through comprehensive evaluation criteria:
+
+### Material Accountability and Inventory
+
+<CardGroup cols={2}>
+  <Card title="Inventory Management" icon="clipboard-list">
+    - Comprehensive agent and sample tracking
+    - Real-time inventory reconciliation
+    - Storage location documentation
+    - Transfer and shipment records
+    - Regular physical inventories
+  </Card>
+  
+  <Card title="Material Control" icon="box-archive">
+    - Unique sample identification
+    - Chain of custody documentation
+    - Dual control for high-risk materials
+    - Tamper-evident packaging
+    - Disposal verification procedures
+  </Card>
+</CardGroup>
+
+### Access Control Systems
+
+**Physical Access**
+- Perimeter security and entry points
+- Multi-factor authentication systems
+- Biometric access controls
+- Key and card management
+- Visitor control and escort procedures
+- After-hours access protocols
+
+**Logical Access**
+- IT systems and database security
+- User authentication and authorization
+- Data encryption and protection
+- Remote access controls
+- Audit logging and monitoring
+
+### Personnel Security
+
+<AccordionGroup>
+  <Accordion title="Personnel Screening">
+    - Background checks and verification
+    - Credential validation
+    - Reference checks
+    - Criminal history review
+    - Insider threat indicators
+    - Periodic re-screening requirements
+  </Accordion>
+  
+  <Accordion title="Access Authorization">
+    - Need-to-know determinations
+    - Role-based access privileges
+    - Approval and documentation processes
+    - Access modification and revocation
+    - Periodic access reviews
+    - Separation of duties principles
+  </Accordion>
+  
+  <Accordion title="Security Awareness">
+    - Security training programs
+    - Threat awareness briefings
+    - Reporting suspicious activity
+    - Social engineering awareness
+    - Cybersecurity hygiene
+    - Culture of security mindfulness
+  </Accordion>
+</AccordionGroup>
+
+### Facility Security Features
+
+- Intrusion detection systems
+- Video surveillance and monitoring
+- Alarm systems and response protocols
+- Secure storage areas and safes
+- Laboratory isolation and compartmentalization
+- Security lighting and visibility
+- Communication systems for emergencies
+
+### Information Security
+
+- Sensitive information classification
+- Data storage and transmission security
+- Publication and presentation review
+- Electronic device policies
+- Social media and communications guidance
+- Intellectual property protection
+
+## Assessment Structure
+
+The biosecurity assessment is organized into comprehensive sections addressing all aspects of security:
+
+### Section 1: Facility and Organizational Context
+Establishes the security environment, threat landscape, and institutional security framework.
+
+**Key Elements:**
+- Facility location and characteristics
+- Organizational security policies
+- Regulatory and compliance requirements
+- Local threat environment
+- Historical security incidents
+
+### Section 2: Material Risk Assessment
+Evaluates the attractiveness and consequences of biological material theft or misuse.
+
+**Key Elements:**
+- Agent classification and select agent status
+- Dual-use research concerns
+- Potential misuse scenarios
+- Consequence assessment
+- Material quantities and accessibility
+
+### Section 3: Security Systems and Controls
+Documents existing security measures across all functional areas.
+
+**Key Elements:**
+- Physical security infrastructure
+- Access control systems
+- Inventory management procedures
+- Information security controls
+- Security personnel and response
+
+### Section 4: Personnel Security Program
+Assesses personnel screening, training, and access authorization processes.
+
+**Key Elements:**
+- Screening procedures and documentation
+- Security training completion
+- Access authorization processes
+- Insider threat mitigation
+- Reporting and accountability culture
+
+### Section 5: Incident Response and Recovery
+Evaluates preparedness for security incidents and emergency situations.
+
+**Key Elements:**
+- Incident detection capabilities
+- Response procedures and teams
+- Communication protocols
+- Recovery and continuity planning
+- Post-incident analysis processes
+
+<Tip>
+Engage security professionals, law enforcement liaisons, and institutional security officers early in the assessment process to ensure comprehensive evaluation.
+</Tip>
+
+## Threat Scenarios Considered
+
+The biosecurity assessment evaluates vulnerabilities against realistic threat scenarios:
+
+### External Threats
+
+<CardGroup cols={2}>
+  <Card title="Unauthorized Intrusion" icon="user-secret" color="#CC0000">
+    - Forced entry attempts
+    - Tailgating and piggybacking
+    - Facility reconnaissance
+    - After-hours breaches
+  </Card>
+  
+  <Card title="Targeted Theft" icon="hand-holding-droplet" color="#CC0000">
+    - Material acquisition by external actors
+    - State-sponsored collection
+    - Terrorist acquisition
+    - Criminal diversion
+  </Card>
+</CardGroup>
+
+### Internal Threats
+
+<CardGroup cols={2}>
+  <Card title="Insider Threat" icon="user-shield" color="#FF6600">
+    - Disgruntled employee actions
+    - Ideological motivation
+    - Financial incentives
+    - Coercion or compromise
+  </Card>
+  
+  <Card title="Inadvertent Loss" icon="circle-exclamation" color="#FFAA00">
+    - Poor inventory practices
+    - Inadequate transfer documentation
+    - Lost or misplaced samples
+    - Unauthorized removal
+  </Card>
+</CardGroup>
+
+### Cyber and Information Threats
+
+- Data exfiltration attempts
+- Unauthorized remote access
+- Phishing and social engineering
+- Insider data theft
+- Intellectual property theft
+
+### Sabotage and Disruption
+
+- Intentional contamination
+- Equipment sabotage
+- Data destruction or manipulation
+- Process disruption
+
+<Warning>
+Threat scenarios are based on documented incidents in laboratory and research settings. All laboratories handling pathogens or toxins face some level of security risk, regardless of location or perceived threat level.
+</Warning>
+
+## Risk Scoring Methodology
+
+The biosecurity assessment employs a threat-based risk calculation that considers attractiveness of materials, vulnerability to exploitation, and potential consequences:
+
+### Scoring Components
+
+**Material Attractiveness**
+- Select agent status and regulatory classification
+- Ease of weaponization or misuse
+- Availability from alternative sources
+- Technical expertise required for misuse
+- Consequence severity of misuse
+
+**Vulnerability Assessment**
+- Access control effectiveness
+- Inventory accountability rigor
+- Personnel security measures
+- Detection capabilities
+- Response effectiveness
+
+**Consequence Evaluation**
+- Public health impact potential
+- Economic disruption
+- Public confidence and trust
+- Regulatory and legal consequences
+- Institutional reputation
+
+### Overall Security Risk
+
+The biosecurity risk score integrates these components:
+
+```
+Security Risk = (Material Attractiveness × Vulnerability) × Consequence
+```
+
+Risk levels are categorized to guide security enhancement priorities:
+
+<CardGroup cols={3}>
+  <Card title="Low Security Risk" icon="shield-check" color="#00AA00">
+    Adequate security measures relative to material risk and threat environment
+  </Card>
+  
+  <Card title="Medium Security Risk" icon="shield" color="#FFAA00">
+    Security enhancements recommended to address identified vulnerabilities
+  </Card>
+  
+  <Card title="High Security Risk" icon="shield-exclamation" color="#CC0000">
+    Significant vulnerabilities requiring immediate security improvements
+  </Card>
+</CardGroup>
+
+## Security Recommendations
+
+Based on assessment results, the tool provides tailored recommendations across functional security areas:
+
+### Physical Security Enhancements
+
+**Immediate Priority**
+- Critical access control failures
+- Storage security deficiencies
+- Intrusion detection gaps
+- Perimeter security weaknesses
+
+**Short-term Improvements**
+- Video surveillance expansion
+- Alarm system upgrades
+- Visitor management systems
+- Secure storage equipment
+- Lighting and visibility improvements
+
+**Long-term Investments**
+- Facility redesign or relocation
+- Advanced access control systems
+- Integrated security operations center
+- Redundant security systems
+
+### Personnel Security Program
+
+**Screening and Vetting**
+- Enhanced background check procedures
+- Periodic re-screening protocols
+- Insider threat training
+- Access review processes
+- Exit procedures and access revocation
+
+**Security Awareness and Culture**
+- Role-specific security training
+- Threat briefings and updates
+- Reporting mechanisms and incentives
+- Security-conscious culture development
+- Regular security communications
+
+### Inventory and Accountability
+
+<AccordionGroup>
+  <Accordion title="Inventory Management Systems">
+    - Automated tracking systems
+    - Real-time inventory reconciliation
+    - Barcoding or RFID tagging
+    - Electronic transfer documentation
+    - Audit trail capabilities
+    - Regular physical inventory schedules
+  </Accordion>
+  
+  <Accordion title="Access and Control Procedures">
+    - Dual control for high-risk materials
+    - Authorized user lists
+    - Sign-out and return verification
+    - Storage location controls
+    - Tamper-evident measures
+    - Disposal verification
+  </Accordion>
+</AccordionGroup>
+
+### Information Security
+
+- Data classification and handling procedures
+- Encryption for sensitive information
+- Secure communication channels
+- Publication security review
+- Electronic device management
+- Cybersecurity awareness training
+- Incident response procedures
+
+### Security Operations
+
+**Detection and Monitoring**
+- Security system monitoring
+- Anomaly detection and investigation
+- Regular security audits
+- Penetration testing
+- Inventory reconciliation
+
+**Incident Response**
+- Security incident classification
+- Response team composition and training
+- Communication protocols
+- Law enforcement coordination
+- Evidence preservation
+- Recovery procedures
+
+<Note>
+**Risk-Based Security**
+
+Security measures should be commensurate with the risk level. Not all materials require maximum security, but all biological materials require appropriate security based on their potential for misuse and consequences.
+</Note>
+
+## Regulatory and Compliance Context
+
+The biosecurity assessment helps ensure compliance with applicable regulations:
+
+### U.S. Select Agent Regulations
+- Federal Select Agent Program (FSAP) requirements
+- Security risk assessments for select agents
+- Personnel reliability programs
+- Inventory tracking and reporting
+- Incident notification requirements
+
+### Institutional Requirements
+- Institutional biosafety committee oversight
+- Export control compliance
+- Dual-use research of concern policies
+- Contract and grant security requirements
+- Institutional security policies
+
+### International Frameworks
+- Biological Weapons Convention (BWC)
+- Australia Group guidelines
+- WHO laboratory biosecurity guidance
+- National biosecurity frameworks
+- International shipping regulations
+
+<Warning>
+Compliance with regulations is a minimum baseline. Effective biosecurity requires a risk-based approach that may exceed regulatory minimums based on specific threats and vulnerabilities.
+</Warning>
+
+## Integration with Biosafety
+
+Biosecurity and biosafety programs are complementary and interdependent:
+
+### Shared Elements
+- Access control (safety and security)
+- Inventory management (accountability and safety)
+- Training programs (competency and awareness)
+- Incident response (exposures and security events)
+- Documentation and record-keeping
+
+### Potential Conflicts
+- Emergency egress vs. access control
+- Visibility for safety vs. obscurity for security
+- Collaboration vs. need-to-know restrictions
+- Transparency vs. information protection
+
+<Tip>
+**Integrated Approach**
+
+For comprehensive biorisk management, consider using the [Integrated BioRisk Assessment](/assessments/integrated-biorisk) which addresses both safety and security in a unified framework, optimizing measures that support both objectives.
+</Tip>
+
+## Best Practices for Security Assessment
+
+### Assessment Preparation
+- Involve institutional security officer
+- Review previous security assessments
+- Gather security system documentation
+- Coordinate with IT security staff
+- Consider threat intelligence briefings
+
+### Information Handling
+- Protect assessment results as sensitive
+- Limit distribution to need-to-know personnel
+- Store securely with controlled access
+- Consider classification for high-risk facilities
+- Follow institutional information security policies
+
+### Stakeholder Engagement
+- Security professionals and law enforcement
+- Facilities and engineering staff
+- IT and cybersecurity teams
+- Laboratory leadership and staff
+- Institutional biosafety and security committees
+
+### Implementation and Follow-up
+- Prioritize recommendations by risk reduction
+- Develop implementation timeline and budget
+- Assign responsibilities for corrective actions
+- Monitor implementation progress
+- Reassess after security improvements
+- Conduct regular security drills and exercises
+
+<Warning>
+**Reassessment Triggers**
+
+- Introduction of select agents or high-risk materials
+- Security incidents or near-misses
+- Facility modifications or relocations
+- Significant personnel changes
+- Changes in threat environment
+- At minimum every 2-3 years
+</Warning>
+
+## Additional Resources
+
+<CardGroup cols={2}>
+  <Card title="BioRAM Security Versions" icon="timeline" href="/reference/versions">
+    Evolution of biosecurity assessment from 2016 through 2020 versions
+  </Card>
+  
+  <Card title="Integrated BioRisk" icon="shield-halved" href="/assessments/integrated-biorisk">
+    Combined safety and security assessment using BioRAM-2022
+  </Card>
+  
+  <Card title="Java Application" icon="desktop" href="/guides/java-version">
+    Multi-language biosecurity assessment using the Java desktop tool
+  </Card>
+  
+  <Card title="Methodology Guide" icon="book" href="/reference/methodology">
+    Detailed biosecurity risk assessment methodology and validation
+  </Card>
+</CardGroup>

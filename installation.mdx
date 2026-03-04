@@ -1,0 +1,248 @@
+---
+title: Installation
+description: Download and install BioRAM for biosafety, biosecurity, and chemical security risk assessments
+---
+
+## Overview
+
+BioRAM is available in two formats: Excel-based tools and a Java desktop application. Choose the version that best fits your needs and technical environment.
+
+<CardGroup cols={2}>
+  <Card title="Excel version" icon="table">
+    Best for users who prefer spreadsheets and don't want to install additional software
+  </Card>
+  
+  <Card title="Java application" icon="desktop">
+    Best for multilingual support, advanced features, and enhanced reporting
+  </Card>
+</CardGroup>
+
+## Downloading BioRAM
+
+All BioRAM files are available from the official GitHub repository:
+
+<Card title="Download from GitHub" icon="github" href="https://github.com/sandialabs/BioRAM">
+  Access the latest releases and source code
+</Card>
+
+### Available files
+
+When you access the repository, you'll find:
+
+- **Excel files** (`.xlsx`): Self-contained assessment tools
+- **Java application** (`bioram-4.0.5.jar` and `bioram-4.0.5.exe`): Desktop application
+- **RAML files** (`.raml`): Risk assessment model definitions for the Java version
+- **Documentation PDFs**: User guides and methodology references
+- **Example files**: Sample assessments like the Monkey Pox diagnostic laboratory example
+
+<Note>
+Download all files to a single directory on your computer to keep everything organized. The Java application requires the appropriate `.raml` files to be in the same directory or a known location.
+</Note>
+
+## Excel version installation
+
+The Excel version requires no installation—just download and open.
+
+<Steps>
+  <Step title="Check system requirements">
+    **Requirements:**
+    - Microsoft Excel 2013 or newer (Windows or Mac)
+    - Macros enabled (required for risk calculations)
+    - Approximately 5 MB of disk space per assessment file
+    
+    <Warning>
+    You must enable macros for BioRAM Excel files to function properly. When you open a file, click **Enable Content** or **Enable Macros** if prompted.
+    </Warning>
+  </Step>
+  
+  <Step title="Download assessment files">
+    Download the appropriate Excel file(s) for your assessment type:
+    
+    - **BioRAM-2022 (BioRisk).xlsx** - Integrated biosafety and biosecurity assessment (newest, beta)
+    - **BioRAM-Safety-2016.xlsx** - Biosafety-only assessment
+    - **BioRAM-Security-2020.xlsx** - Biosecurity-only assessment (most recent security version)
+    - **BioRAM-Security-2017.xlsx** or **BioRAM-Security-2016.xlsx** - Earlier biosecurity versions
+    
+    <Tip>
+    The BioRAM-2022 (BioRisk) file is the newest version and combines both safety and security assessments into a single tool. It's still in beta but fully functional.
+    </Tip>
+  </Step>
+  
+  <Step title="Open and start using">
+    1. Save the downloaded `.xlsx` file to your preferred location
+    2. Double-click to open in Microsoft Excel
+    3. Click **Enable Content** or **Enable Macros** when prompted
+    4. Follow the instructions within the workbook to begin your assessment
+    
+    Save your work regularly as you would with any Excel file. You can create copies for different assessments or facilities.
+  </Step>
+</Steps>
+
+## Java application installation
+
+The Java version provides advanced features and multilingual support but requires Java Runtime Environment.
+
+<Steps>
+  <Step title="Install Java Runtime Environment">
+    The Java application requires JRE (Java Runtime Environment) version 8 or newer.
+    
+    **Check if Java is already installed:**
+    
+    Open a command prompt or terminal and run:
+    ```bash
+    java -version
+    ```
+    
+    If Java is installed, you'll see version information. If not, download and install Java:
+    
+    - **Windows/Mac/Linux**: Download from [java.com/download](https://www.java.com/download)
+    - **Linux (alternative)**: Install via package manager (`sudo apt install default-jre` on Ubuntu/Debian)
+    
+    <Note>
+    You need the Java Runtime Environment (JRE), not the full Java Development Kit (JDK), though JDK will also work.
+    </Note>
+  </Step>
+  
+  <Step title="Download BioRAM files">
+    Download the following files from the GitHub repository:
+    
+    **Required:**
+    - `bioram-4.0.5.jar` (for cross-platform use) OR `bioram-4.0.5.exe` (for Windows)
+    - At least one `.raml` file for your assessment type:
+      - `Biosafety.raml` - For biosafety risk assessments
+      - `Biosecurity.raml` - For biosecurity risk assessments
+      - `ChemSAM.raml` - For chemical security assessments
+    
+    **Optional (for multilingual support):**
+    - `BiosafetyRAM_es.raml` - Spanish biosafety
+    - `BiosafetyRAM_fr.raml` - French biosafety
+    - `BiosafetyRAM_v2_ru.raml` - Russian biosafety
+    - `BiosafetyRAM_v2_id.raml` - Indonesian biosafety
+    - `Biosafety_AR.raml` - Arabic biosafety
+    - Similar files available for biosecurity assessments
+    
+    <Tip>
+    Save all files to the same directory (e.g., `C:\BioRAM` or `~/BioRAM`) for easy access.
+    </Tip>
+  </Step>
+  
+  <Step title="Launch the application">
+    **Windows users:**
+    - Double-click `bioram-4.0.5.exe` to launch
+    - Or double-click `bioram-4.0.5.jar` if you prefer the JAR file
+    
+    **Mac/Linux users:**
+    - Double-click `bioram-4.0.5.jar`, or
+    - Run from terminal:
+      ```bash
+      java -jar bioram-4.0.5.jar
+      ```
+    
+    When the application opens, you'll be prompted to select a `.raml` file to begin your assessment.
+    
+    <Warning>
+    The `.raml` files must be accessible to the application. Keep them in the same directory as the JAR/EXE file, or note their location when opening files.
+    </Warning>
+  </Step>
+</Steps>
+
+## Understanding file structure
+
+### RAML files
+
+RAML (Risk Assessment Markup Language) files define the assessment model for the Java application. Each `.raml` file contains:
+
+- Question sets and assessment criteria
+- Risk calculation algorithms
+- Scoring thresholds and categories
+- Language-specific text (for international versions)
+
+**You need the appropriate RAML file for:**
+- The type of assessment you want to conduct (biosafety, biosecurity, or chemical)
+- The language you want to use (if not English)
+
+The Java application loads these files to present the assessment questionnaire and perform risk calculations.
+
+### Source code
+
+If you're interested in customizing BioRAM or understanding its implementation:
+
+- `Java source.zip` - Complete Java application source code
+- `RAM Engine.zip` - Core risk assessment engine
+- `CDC BioRAM.zip` - Additional resources and documentation
+
+<Note>
+Most users will not need the source code files. These are provided for transparency and for organizations that want to modify or extend BioRAM for specific needs.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Excel: Macros won't enable">
+    If you can't enable macros in Excel:
+    
+    1. Go to **File > Options > Trust Center > Trust Center Settings**
+    2. Click **Macro Settings**
+    3. Select "Enable all macros" (or "Disable all macros with notification")
+    4. Click **OK** and restart Excel
+    5. Reopen the BioRAM file
+    
+    On Mac: **Excel > Preferences > Security & Privacy > Enable all macros**
+  </Accordion>
+  
+  <Accordion title="Java: Application won't launch">
+    If the JAR file won't open:
+    
+    1. Verify Java is installed: `java -version` in command prompt/terminal
+    2. Try launching from command line: `java -jar bioram-4.0.5.jar`
+    3. Check that the file isn't blocked (Windows: right-click > Properties > Unblock)
+    4. Ensure you have Java 8 or newer
+    
+    If the EXE won't launch on Windows, try the JAR file instead or reinstall Java.
+  </Accordion>
+  
+  <Accordion title="Java: Can't find or open RAML files">
+    Make sure:
+    
+    1. The `.raml` files are downloaded and not corrupted
+    2. The files are in the same directory as the JAR/EXE, or you know their location
+    3. When opening a file in the application, browse to the correct directory
+    4. File names match exactly (case-sensitive on Linux/Mac)
+  </Accordion>
+  
+  <Accordion title="General: Files won't download or appear corrupted">
+    If files from GitHub won't download properly:
+    
+    1. Try a different web browser
+    2. Clear your browser cache
+    3. Download individual files instead of using "Download ZIP"
+    4. Check your antivirus isn't blocking downloads
+    5. Verify file sizes match those shown on GitHub
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<Card title="Quick start guide" icon="rocket" href="/quickstart">
+  Learn how to conduct your first BioRAM assessment
+</Card>
+
+## Additional resources
+
+<CardGroup cols={2}>
+  <Card title="Excel version guide" icon="table" href="/guides/excel-version">
+    Detailed walkthrough of Excel-based assessments
+  </Card>
+  
+  <Card title="Java version guide" icon="desktop" href="/guides/java-version">
+    Complete guide to the Java application features
+  </Card>
+  
+  <Card title="User guide PDF" icon="book">
+    Download the official BioRAM User Guide SAND report from the repository for detailed methodology information
+  </Card>
+  
+  <Card title="Directions PDF" icon="file-lines">
+    Download BioRAM 4.0 Directions from the repository for step-by-step Java application instructions
+  </Card>
+</CardGroup>
