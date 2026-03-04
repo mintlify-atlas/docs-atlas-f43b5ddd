@@ -1,0 +1,84 @@
+{
+  "projectType": "general",
+  "projectName": "BioRAM",
+  "projectDescription": "BioSafety and BioSecurity Laboratory Risk Assessment Tool",
+  "theme": "linden",
+  "primaryColor": "#0066CC",
+  "lightColor": "#4A90E2",
+  "darkColor": "#003D7A",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "User Guides",
+            "pages": [
+              "guides/excel-version",
+              "guides/java-version",
+              "guides/chemsam"
+            ]
+          },
+          {
+            "group": "Assessment Types",
+            "pages": [
+              "assessments/biosafety",
+              "assessments/biosecurity",
+              "assessments/integrated-biorisk"
+            ]
+          },
+          {
+            "group": "Examples",
+            "pages": [
+              "examples/monkey-pox"
+            ]
+          },
+          {
+            "group": "Localization",
+            "pages": [
+              "localization/international-versions"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/methodology",
+              "reference/versions",
+              "reference/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Biosafety risk assessment for laboratory environments",
+    "Biosecurity risk assessment for laboratory security",
+    "Integrated BioRisk assessment combining safety and security",
+    "Chemical security assessment via ChemSAM",
+    "Multi-language support (English, Spanish, French, Indonesian, Russian, Arabic)",
+    "Available in both Excel and Java desktop application formats"
+  ],
+  "publicApiSurface": [
+    "BioRAM-2022 (BioRisk) - Integrated Excel assessment tool",
+    "BioRAM-Safety-2016.xlsx - Excel biosafety assessment",
+    "BioRAM-Security-2020.xlsx - Excel biosecurity assessment",
+    "bioram-4.0.5.jar - Java application",
+    "Biosafety.raml - Biosafety assessment data model",
+    "Biosecurity.raml - Biosecurity assessment data model",
+    "ChemSAM.raml - Chemical security assessment data model"
+  ]
+}
